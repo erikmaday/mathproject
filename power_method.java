@@ -2,10 +2,10 @@ public class power_method {
     private Matrix approx;
     private Matrix initial;
     private double TOLERANCE = .00000001;
+    private int N = 100; //iteration limit
     
     /**
-     * Performs the PowerMethod on the matrix for the specified number of iterations
-     * prints out the amount
+     * Performs power method on the matrix for the specified number of iterations
      * @param A matrix to perform power method on
      * @param iterations amount of times to perform power method
      */
@@ -18,8 +18,7 @@ public class power_method {
     }
     
     /**
-     * Performs the PowerMethod on a given matrix A until a given
-     * tolerance is reached
+     * Performs power method on a given matrix A until the tolerance is reached
      * @param A matrix to perform power method on
      */
     public power_method(Matrix matrix) {
@@ -31,9 +30,8 @@ public class power_method {
     }
     
     /**
-     * Performs the PowerMethod on a given matrix A until a given
-     * tolerance is reached
-     * @param A matrix to perform power method on
+     * Performs the power method on the matrix until the specified tolerance is reached
+     * @param matrix matrix to perform power method on
      * @param approx the initial approximation for the power method
      * @param tol minimum tolerance of error for the method
      */
@@ -47,9 +45,8 @@ public class power_method {
      }
     
     /**
-     * Performs the PowerMethod on a given matrix A until a given
-     * tolerance is reached
-     * @param A matrix to perform power method on
+     * Performs power method on the matrix until the tolerance is reached
+     * @param matrix matrix to perform power method on
      * @param approx the initial approximation for the power method
      * @param tol minimum tolerance of error for the method
      */
@@ -116,8 +113,8 @@ public class power_method {
             tol = Math.abs(tempEigen - eigenvalue);
             eigenvalue = tempEigen;
             iterations++;
-            if (iterations >= 150) {
-                throw new Error("Did not converge within 150 iterations.");
+            if (iterations >= N) {
+                throw new Error("Did not converge within " + N + " iterations.");
             }
         }
         //Normalizing

@@ -257,10 +257,4 @@ public class LinearAlgebra {
         }
         return det;
     }
-    
-    public static void main(String args[]) {
-        double[][] arr = new double[][]{{2,3},{3,5}};
-        Matrix m = new Matrix(arr);
-        System.out.print(LinearAlgebra.determinant(m, 2));
-    }
 }

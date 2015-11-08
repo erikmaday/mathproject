@@ -1,3 +1,7 @@
+package PowerMethods;
+
+import base.Matrix;
+
 public class MatrixGroup {
     private Matrix matrix;
     private double dominantEigenvalue;

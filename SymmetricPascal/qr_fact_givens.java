@@ -1,3 +1,6 @@
+package SymmetricPascal;
+
+import base.LinearAlgebra;
 import java.util.Stack;
 
 /**

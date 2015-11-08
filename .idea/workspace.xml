@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5528c306-9e34-4db4-83fa-0d959d2dfc9f" name="Default" comment="" />
+    <list default="true" id="5528c306-9e34-4db4-83fa-0d959d2dfc9f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/1-SymmetricPascalMatrix/lu_fact.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/1-SymmetricPascalMatrix/qr_fact_givens.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/1-SymmetricPascalMatrix/qr_fact_househ.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/1-SymmetricPascalMatrix/readme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2-ConvergenceOfTheIterativeMethods/readme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/3-ConvergenceOfThePowerMethod/MatrixGroup.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/3-ConvergenceOfThePowerMethod/power_method.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/3-ConvergenceOfThePowerMethod/readme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LinearAlgebra.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Matrix.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Vector.java" afterPath="" />
+    </list>
     <ignored path="mathproject.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,32 +35,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="lu_fact.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SymmetricPascal/lu_fact.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="qr_fact_givens.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1-SymmetricPascalMatrix/qr_fact_givens.java">
+        <entry file="file://$PROJECT_DIR$/SymmetricPascal/qr_fact_givens.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="power_method.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3-ConvergenceOfThePowerMethod/power_method.java">
+      <file leaf-file-name="qr_fact_househ.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SymmetricPascal/qr_fact_househ.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lu_fact.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/1-SymmetricPascalMatrix/lu_fact.java">
+      <file leaf-file-name="MatrixGroup.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PowerMethods/MatrixGroup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.083102494">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="power_method.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PowerMethods/power_method.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="3.1894736">
+              <caret line="101" column="63" selection-start-line="101" selection-start-column="63" selection-end-line="101" selection-end-column="63" />
+              <folding>
+                <element signature="e#472#485#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,6 +101,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/1-SymmetricPascalMatrix/qr_fact_givens.java" />
+        <option value="$PROJECT_DIR$/LinearAlgebra.java" />
+        <option value="$PROJECT_DIR$/Matrix.java" />
+        <option value="$PROJECT_DIR$/Vector.java" />
+        <option value="$PROJECT_DIR$/1-SymmetricPascalMatrix/lu_fact.java" />
+        <option value="$PROJECT_DIR$/SymmetricPascal/lu_fact.java" />
+        <option value="$PROJECT_DIR$/SymmetricPascal/qr_fact_givens.java" />
+        <option value="$PROJECT_DIR$/SymmetricPascal/qr_fact_househ.java" />
+        <option value="$PROJECT_DIR$/PowerMethods/MatrixGroup.java" />
+        <option value="$PROJECT_DIR$/PowerMethods/power_method.java" />
       </list>
     </option>
   </component>
@@ -137,7 +180,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="2-ConvergenceOfTheIterativeMethods" />
+              <option name="myItemId" value="SymmetricPascal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -151,7 +194,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="1-SymmetricPascalMatrix" />
+              <option name="myItemId" value="PowerMethods" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -163,7 +206,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager">
@@ -580,12 +623,12 @@
       <created>1447011258387</created>
       <option name="number" value="Default" />
       <updated>1447011258387</updated>
-      <workItem from="1447011261236" duration="119000" />
+      <workItem from="1447011261236" duration="732000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119000" />
+    <option name="totallyTimeSpent" value="732000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="132" y="50" width="1278" height="798" extended-state="0" />
@@ -593,6 +636,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -600,7 +644,7 @@
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960877" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960877" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -623,28 +667,50 @@
     <breakpoint-manager />
     <watches-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/1-SymmetricPascalMatrix/qr_fact_givens.java">
+    <entry file="file://$PROJECT_DIR$/SymmetricPascal/qr_fact_givens.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/3-ConvergenceOfThePowerMethod/power_method.java">
+    <entry file="file://$PROJECT_DIR$/PowerMethods/MatrixGroup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1-SymmetricPascalMatrix/lu_fact.java">
+    <entry file="file://$PROJECT_DIR$/SymmetricPascal/qr_fact_househ.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.083102494">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SymmetricPascal/lu_fact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PowerMethods/power_method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.1894736">
+          <caret line="101" column="63" selection-start-line="101" selection-start-column="63" selection-end-line="101" selection-end-column="63" />
+          <folding>
+            <element signature="e#472#485#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

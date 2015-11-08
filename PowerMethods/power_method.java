@@ -1,3 +1,7 @@
+package PowerMethods;
+
+import base.Matrix;
+import base.LinearAlgebra;
 import java.awt.Color;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

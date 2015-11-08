@@ -57,8 +57,8 @@ public class qr_fact_givens {
             while (j < level) {
                 double x = matrixR[level - 1][i];
                 double y = matrixR[level][i];
-                double c = changeToC(x, y);
-                double s = changeToS(x, y);
+                double c = calculateC(x, y);
+                double s = calculateS(x, y);
                 diagonalMatrix[level][level - 1] = s;
                 diagonalMatrix[level][level] = c;
                 diagonalMatrix[level - 1][level - 1] = c;
@@ -88,7 +88,7 @@ public class qr_fact_givens {
      * @param y a given element
      * @return the calculated change
      */
-    public double changeToC(double x, double y) {
+    public double calculateC(double x, double y) {
         double bottom = Math.sqrt((x * x) + (y * y));
         return x / bottom;
     }
@@ -100,7 +100,7 @@ public class qr_fact_givens {
      * @param y a given element
      * @return the calculated change
      */
-    public double changeToS(double x, double y) {
+    public double calculateS(double x, double y) {
         double bottom = Math.sqrt((x * x) + (y * y));
         y = y * (-1);
         return y / bottom;

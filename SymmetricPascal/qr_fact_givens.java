@@ -122,7 +122,7 @@ public class qr_fact_givens {
                     diagonalMatrix[x][y] = 0;
                 }
             }
-            return diagonalMatrix;
         }
+        return diagonalMatrix;
     }
 }

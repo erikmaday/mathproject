@@ -1,4 +1,4 @@
-#MATH 2605 Project
+##MATH 2605 Project
 
 
 By Erik Maday, Christopher Gordon, and Quinton Johnson

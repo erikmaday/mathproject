@@ -38,7 +38,7 @@ public class Matrix {
     
     /** Construct an m-by-n matrix of zeros.
      * @param height number of rows.
-     * @param wdith number of columns.
+     * @param width number of columns.
      */
     public Matrix(int height, int width) {
         this.height = height;
@@ -102,8 +102,8 @@ public class Matrix {
     
     /**
      * Get a column vector from the matrix
-     * @param mIndex index of the column to start at
-     * @param nIndex index of the row to start at
+     * @param heightIndex index of the column to start at
+     * @param widthIndex index of the row to start at
      * @return Column vector
     */
     public double[] getColumnVector(int heightIndex, int widthIndex) {

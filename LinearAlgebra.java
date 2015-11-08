@@ -61,12 +61,9 @@ public class LinearAlgebra {
      * Multiplies the first matrix by the second.
      * @return A * B
      */
-    public static Matrix multiplyMatrix(Matrix a, Matrix b) {
+    public static double[][] multiplyMatrix(double[][] A, double[][] B) {
         //TODO 
             //check for size mismatch
-        
-        double[][] A = a.toArray();
-        double[][] B = b.toArray();
         
         int aRows = A.length;
         int aCols = A[0].length;
@@ -86,7 +83,7 @@ public class LinearAlgebra {
                 }
             }
         }
-        return new Matrix(ret);
+        return ret;
     }
     
     /**
@@ -213,13 +210,12 @@ public class LinearAlgebra {
      * Takes in a matrix mxn and transposes it.
      * @return transpose Matrix nxm
      */
-    public static Matrix transposeMatrix(Matrix matrix){
-        double[][] m = matrix.toArray();
+    public static double[][] transposeMatrix(double[][] m){
         double[][] ret = new double[m[0].length][m.length];
         for (int i = 0; i < m.length; i++)
             for (int j = 0; j < m[0].length; j++)
                 ret[j][i] = m[i][j];
-        return new Matrix(ret);
+        return ret;
     }
     
     public static double determinant(Matrix matrix, int n) {

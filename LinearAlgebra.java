@@ -257,4 +257,19 @@ public class LinearAlgebra {
         }
         return det;
     }
+    
+    /**
+    * Finds the trace of a square matrix by finding the sum of the diagnal
+    * @param m Matrix
+    * @return tr is the trace of Matrix m
+    */
+    public static double trace(Matrix m) {
+        double tr = 0;
+        double val = 0;
+        for (int x = m.getHeight(); x > 0; x--) {
+            val = m.get(x, x);
+            tr += val;
+        }
+        return tr;
+    }
 }

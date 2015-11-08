@@ -1,7 +1,5 @@
 package base;
 
-import java.lang.IndexOutOfBoundsException;
-
 /**
  * @author Erik Maday
  * @version 1.0
@@ -13,7 +11,7 @@ public class Vector {
 
     /**
      * Initialize vector
-     * @param array that represents the vector
+     * @param vector that represents the vector
      */
     public Vector(double[] vector) {
         this.vector = vector;
@@ -27,7 +25,8 @@ public class Vector {
      */
     public double get(int i) {
         if (i > size) {
-            throw new IndexOutOfBoundsException(i + " is not a valid index in the vector of size " + size + ".");
+            throw new IndexOutOfBoundsException(i + " is not a valid "
+                    + "index in the vector of size " + size + ".");
         }
         return vector[i];
     }
@@ -39,7 +38,7 @@ public class Vector {
     public int getSize() {
         return this.size;
     }
-    
+
     /**
      * Returns array of the vector
      * @return array of doubles of the vector

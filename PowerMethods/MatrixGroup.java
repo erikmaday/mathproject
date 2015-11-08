@@ -8,7 +8,11 @@ public class MatrixGroup {
     private double recessiveEigenvalue;
     private int powerMethodIterations;
     private int inversePowerMethodIterations;
-    
+
+    /**
+     * Creates a matrix
+     * @param matrix the input matrix
+     */
     public MatrixGroup(Matrix matrix) {
         this.matrix = matrix;
     }
@@ -38,7 +42,7 @@ public class MatrixGroup {
 
     /**
      * Sets the dominant eigenvalue.
-     * @param dominantEignevalue The dominant eigenvalue to set
+     * @param dominantEigenvalue The dominant eigenvalue to set
      */
     public void setDominantEigenvalue(double dominantEigenvalue) {
         this.dominantEigenvalue = dominantEigenvalue;
@@ -86,9 +90,11 @@ public class MatrixGroup {
 
     /**
      * Sets the iterations in power method.
-     * @param inversePowerMethodIterations The inverse power method iterations to set
+     * @param inversePowerMethodIterations The inverse power
+     *                                     method iterations to set
      */
-    public void setInversePowerMethodIterations(int inversePowerMethodIterations) {
+    public void setInversePowerMethodIterations(
+            int inversePowerMethodIterations) {
         this.inversePowerMethodIterations = inversePowerMethodIterations;
     }
 }

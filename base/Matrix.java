@@ -1,7 +1,5 @@
 package base;
 
-import java.lang.IndexOutOfBoundsException;
-
 /**
  * @author Erik Maday
  * @version 1.0
@@ -12,8 +10,10 @@ public class Matrix {
     private int height;
     private int width;
 
-    public Matrix() {}
-
+    /**
+     * Set a matrix to the given input
+     * @param matrix the input matrix
+     */
     public void setMatrix(double[][] matrix) {
         this.matrix = matrix;
     }
@@ -24,10 +24,10 @@ public class Matrix {
      * @param s matrix(i,j).
      * @exception ArrayIndexOutOfBoundsException
      */
-    public void set (int i, int j, double s) {
+    public void set(int i, int j, double s) {
         matrix[i][j] = s;
     }
-        
+
     /**
      * Initialize instance variables
      * @param matrix 2D array representation of Matrix
@@ -37,7 +37,7 @@ public class Matrix {
         this.height = matrix.length;
         this.width = matrix[0].length;
     }
-    
+
     /** Construct an m-by-n matrix of zeros.
      * @param height number of rows.
      * @param width number of columns.
@@ -54,7 +54,7 @@ public class Matrix {
      * @param width number of columns.
      * @param s scalar with which to fill the matrix
      */
-    public Matrix (int height, int width, double s) {
+    public Matrix(int height, int width, double s) {
         this.height = height;
         this.width = width;
         matrix = new double[height][width];
@@ -73,7 +73,8 @@ public class Matrix {
      */
     public double get(int r, int c) {
         if (r > height || c > width) {
-            throw new IndexOutOfBoundsException("That is not a valid index in the matrix.");
+            throw new IndexOutOfBoundsException(
+                    "That is not a valid index in the matrix.");
         }
         return matrix[r][c];
     }
@@ -101,20 +102,20 @@ public class Matrix {
     public int getWidth() {
         return width;
     }
-    
+
     /**
      * Get a column vector from the matrix
      * @param heightIndex index of the column to start at
      * @param widthIndex index of the row to start at
      * @return Column vector
-    */
+     */
     public double[] getColumnVector(int heightIndex, int widthIndex) {
         try {
-           double[] colVector = new double[this.height - heightIndex];
-           for (int i = heightIndex; i < this.height; i++) {
-               colVector[i - heightIndex] = this.matrix[i][widthIndex];
-           }
-           return colVector;
+            double[] colVector = new double[this.height - heightIndex];
+            for (int i = heightIndex; i < this.height; i++) {
+                colVector[i - heightIndex] = this.matrix[i][widthIndex];
+            }
+            return colVector;
         } catch (ArrayIndexOutOfBoundsException e) {
             throw new ArrayIndexOutOfBoundsException("Index is not valid");
         }

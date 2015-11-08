@@ -13,20 +13,38 @@ public class qr_fact_givens {
     private double[][] R;
     private double[][] QR;
 
-    public qr_fact_givens() {}
-
+    /**
+     * A method to get Q for QR factorization
+     *
+     * @return the Q matrix
+     */
     public double[][] getQ() {
         return Q;
     }
 
+    /**
+     * A method to get R for QR factorization
+     *
+     * @return the R matrix
+     */
     public double[][] getR() {
         return R;
     }
 
+    /**
+     * A method to get Q and R for QR factorization
+     *
+     * @return the QR matrix
+     */
     public double[][] getQR() {
         return QR;
     }
 
+    /**
+     * Finds the QR factorization of a given matrix using Givens Rotations
+     *
+     * @param matrix the given matrix
+     */
     public qr_fact_givens(double[][] matrix) {
         int height = matrix.length;
         double[][] diagonalMatrix = createDiagonal(height);
@@ -37,7 +55,7 @@ public class qr_fact_givens {
         while (i < matrixR[0].length) {
             int level = height - 1;
             while (j < level) {
-                double x = matrixR[level-1][i];
+                double x = matrixR[level - 1][i];
                 double y = matrixR[level][i];
                 double c = changeToC(x, y);
                 double s = changeToS(x, y);
@@ -56,17 +74,32 @@ public class qr_fact_givens {
         this.R = matrixR;
         double[][] first = LinearAlgebra.transposeMatrix(givensMatrices.pop());
         while (!givensMatrices.empty()) {
-            first = LinearAlgebra.multiplyMatrix(LinearAlgebra.transposeMatrix(givensMatrices.pop()), first);
+            first = LinearAlgebra.multiplyMatrix(LinearAlgebra.
+                    transposeMatrix(givensMatrices.pop()), first);
         }
         this.Q = first;
         this.QR = LinearAlgebra.multiplyMatrix(first, matrixR);
     }
 
+    /**
+     * Changes elements of a matrix
+     *
+     * @param x a given element
+     * @param y a given element
+     * @return the calculated change
+     */
     public double changeToC(double x, double y) {
         double bottom = Math.sqrt((x * x) + (y * y));
         return x / bottom;
     }
 
+    /**
+     * Changes elements of a matrix
+     *
+     * @param x a given element
+     * @param y a given element
+     * @return the calculated change
+     */
     public double changeToS(double x, double y) {
         double bottom = Math.sqrt((x * x) + (y * y));
         y = y * (-1);
@@ -74,21 +107,22 @@ public class qr_fact_givens {
     }
 
     /**
-     * helper method to create diagonal
-     * matrix with 1's for diagonal
-     * @param h number of rows in matrix A
-     * @return matrix
+     * A method to create the diagonal for a matrix
+     *
+     * @param height the height of the matrix
+     * @return the diagonal in a 2D array
      */
     public double[][] createDiagonal(int height) {
         double[][] diagonalMatrix = new double[height][height];
         for (int x = 0; x < height; x++) {
             for (int y = 0; y < height; y++) {
-                if (x == y)
+                if (x == y) {
                     diagonalMatrix[x][y] = 1;
-                else
+                } else {
                     diagonalMatrix[x][y] = 0;
+                }
             }
+            return diagonalMatrix;
         }
-        return diagonalMatrix;
     }
 }

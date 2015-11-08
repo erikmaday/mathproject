@@ -16,6 +16,16 @@ public class Matrix {
         this.matrix = matrix;
     }
 
+    /** Set a single element.
+     * @param i row index.
+     * @param j column index.
+     * @param s matrix(i,j).
+     * @exception ArrayIndexOutOfBoundsException
+     */
+    public void set (int i, int j, double s) {
+        matrix[i][j] = s;
+    }
+        
     /**
      * Initialize instance variables
      * @param matrix 2D array representation of Matrix
@@ -24,6 +34,33 @@ public class Matrix {
         this.matrix = matrix;
         this.height = matrix.length;
         this.width = matrix[0].length;
+    }
+    
+    /** Construct an m-by-n matrix of zeros.
+     * @param height number of rows.
+     * @param wdith number of columns.
+     */
+    public Matrix(int height, int width) {
+        this.height = height;
+        this.width = width;
+        matrix = new double[height][width];
+    }
+
+
+    /** Construct an m-by-n constant matrix.
+     * @param height number of rows.
+     * @param width number of columns.
+     * @param s sclar with which to fill the matrix
+     */
+    public Matrix (int height, int width, double s) {
+        this.height = height;
+        this.width = width;
+        matrix = new double[height][width];
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                matrix[i][j] = s;
+            }
+        }
     }
 
     /**
@@ -61,6 +98,24 @@ public class Matrix {
      */
     public int getWidth() {
         return width;
+    }
+    
+    /**
+     * Get a column vector from the matrix
+     * @param mIndex index of the column to start at
+     * @param nIndex index of the row to start at
+     * @return Column vector
+    */
+    public double[] getColumnVector(int heightIndex, int widthIndex) {
+        try {
+           double[] colVector = new double[this.height - heightIndex];
+           for (int i = heightIndex; i < this.height; i++) {
+               colVector[i - heightIndex] = this.matrix[i][widthIndex];
+           }
+           return colVector;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new ArrayIndexOutOfBoundsException("Index is not valid");
+        }
     }
 
     /**

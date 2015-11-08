@@ -50,7 +50,7 @@ public class Matrix {
     /** Construct an m-by-n constant matrix.
      * @param height number of rows.
      * @param width number of columns.
-     * @param s sclar with which to fill the matrix
+     * @param s scalar with which to fill the matrix
      */
     public Matrix (int height, int width, double s) {
         this.height = height;

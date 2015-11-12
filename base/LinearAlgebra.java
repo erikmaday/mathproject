@@ -59,6 +59,23 @@ public class LinearAlgebra {
         return new Matrix(matrix);
     }
 
+    public static Matrix matrixSubtraction(Matrix A, Matrix B) {
+        if (A == null || B == null) {
+            throw new IllegalArgumentException("Illegal parameter.");
+        }
+        //TODO
+        //Throw size mismatch error
+        double[][] a = B.toArray();
+        double[][] m = A.toArray();
+        double[][] sub = new double[m.length][m[0].length];
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[0].length; j++) {
+                sub[i][j] = m[i][j] - a[i][j];
+            }
+        }
+        return new Matrix(sub);
+    }
+
     /**
      * Multiplies the first matrix by the second.
      * @param A the first matrix
@@ -231,6 +248,19 @@ public class LinearAlgebra {
             }
         }
         return ret;
+    }
+
+    public static double norm(Matrix m) {
+        double max = 0;
+        double[][] matrix = m.toArray();
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (Math.abs(matrix[i][j]) > max) {
+                    max = Math.abs(matrix[i][j]);
+                }
+            }
+        }
+        return max;
     }
 
     /**

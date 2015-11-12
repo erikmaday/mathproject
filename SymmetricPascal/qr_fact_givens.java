@@ -1,6 +1,9 @@
 package SymmetricPascal;
 
 import base.LinearAlgebra;
+import base.Matrix;
+
+import javax.sound.sampled.Line;
 import java.util.Stack;
 
 /**
@@ -12,6 +15,7 @@ public class qr_fact_givens {
     private double[][] Q;
     private double[][] R;
     private double[][] QR;
+    private static double error;
 
     /**
      * A method to get Q for QR factorization
@@ -52,6 +56,7 @@ public class qr_fact_givens {
         double[][] matrixR = matrix;
         int i = 0;
         int j = 0;
+        //Calculating Matrix
         while (i < matrixR[0].length) {
             int level = height - 1;
             while (j < level) {
@@ -71,14 +76,25 @@ public class qr_fact_givens {
             i++;
             j++;
         }
+
+        //Setting R
         this.R = matrixR;
         double[][] first = LinearAlgebra.transposeMatrix(givensMatrices.pop());
         while (!givensMatrices.empty()) {
             first = LinearAlgebra.multiplyMatrix(LinearAlgebra.
                     transposeMatrix(givensMatrices.pop()), first);
         }
+        //Setting Q
         this.Q = first;
+
+        //Setting QR
         this.QR = LinearAlgebra.multiplyMatrix(first, matrixR);
+
+        //Finding Error
+        double[][] qTimesR = LinearAlgebra.multiplyMatrix(Q, R);
+        Matrix subtract = LinearAlgebra.matrixSubtraction(new Matrix(qTimesR),
+                new Matrix(matrix));
+        this.error = LinearAlgebra.norm(subtract);
     }
 
     /**
@@ -124,5 +140,9 @@ public class qr_fact_givens {
             }
         }
         return diagonalMatrix;
+    }
+
+    public double getError() {
+        return this.error;
     }
 }

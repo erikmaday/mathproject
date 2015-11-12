@@ -57,12 +57,12 @@ public class qr_fact_givens {
             while (j < level) {
                 double x = matrixR[level - 1][i];
                 double y = matrixR[level][i];
-                double c = calculateC(x, y);
-                double s = calculateS(x, y);
-                diagonalMatrix[level][level - 1] = s;
-                diagonalMatrix[level][level] = c;
-                diagonalMatrix[level - 1][level - 1] = c;
-                diagonalMatrix[level - 1][level] = -s;
+                double cos = calculateCos(x, y);
+                double sin = calculateSin(x, y);
+                diagonalMatrix[level][level - 1] = sin;
+                diagonalMatrix[level][level] = cos;
+                diagonalMatrix[level - 1][level - 1] = cos;
+                diagonalMatrix[level - 1][level] = -sin;
                 givensMatrices.push(diagonalMatrix);
                 matrixR = LinearAlgebra.multiplyMatrix(diagonalMatrix, matrixR);
                 diagonalMatrix = createDiagonal(height);
@@ -88,7 +88,7 @@ public class qr_fact_givens {
      * @param y a given element
      * @return the calculated change
      */
-    public double calculateC(double x, double y) {
+    public double calculateCos(double x, double y) {
         double bottom = Math.sqrt((x * x) + (y * y));
         return x / bottom;
     }
@@ -100,7 +100,7 @@ public class qr_fact_givens {
      * @param y a given element
      * @return the calculated change
      */
-    public double calculateS(double x, double y) {
+    public double calculateSin(double x, double y) {
         double bottom = Math.sqrt((x * x) + (y * y));
         y = y * (-1);
         return y / bottom;

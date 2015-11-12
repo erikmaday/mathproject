@@ -21,3 +21,6 @@ MatrixGroup
 
 power_method
 
+**Base**
+
+Packages for basic linear algebra functions

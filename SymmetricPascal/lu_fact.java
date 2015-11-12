@@ -54,7 +54,7 @@ public class lu_fact {
                 LUrowi[j] = LUcolj[i] -= s;
             }
 
-            //find pibot and exchange if needed
+            //find pivot and exchange if needed
             int p = j;
             for (int i = j+1; i < m; i++) {
                 if (Math.abs(LUcolj[i]) > Math.abs(LUcolj[p])) {

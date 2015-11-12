@@ -142,6 +142,10 @@ public class qr_fact_givens {
         return diagonalMatrix;
     }
 
+    /**
+     * Returns the calculated error of the rotation matrix
+     * @return the error
+     */
     public double getError() {
         return this.error;
     }

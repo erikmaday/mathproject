@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="edd95190-8658-4716-98b4-cb30a2b4fc5f" name="Default" comment="">
 <<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mathproject/SymmetricPascal/lu_fact.class" afterPath="$PROJECT_DIR$/out/production/mathproject/SymmetricPascal/lu_fact.class" />
@@ -19,6 +20,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/base/LinearAlgebra.java" afterPath="$PROJECT_DIR$/base/LinearAlgebra.java" />
 >>>>>>> origin/master
     </list>
+=======
+    <list default="true" id="edd95190-8658-4716-98b4-cb30a2b4fc5f" name="Default" comment="" />
+>>>>>>> Stashed changes
     <ignored path="mathproject.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -611,12 +615,12 @@
       <workItem from="1447013091454" duration="1470000" />
       <workItem from="1447075989394" duration="59000" />
       <workItem from="1447341383243" duration="34000" />
-      <workItem from="1447341427166" duration="4096000" />
+      <workItem from="1447341427166" duration="4203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5709000" />
+    <option name="totallyTimeSpent" value="5816000" />
   </component>
   <component name="ToolWindowManager">
 <<<<<<< HEAD

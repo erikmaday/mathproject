@@ -1,6 +1,6 @@
 package PowerMethods;
 
-import base.Matrix;
+import base.*;
 
 public class MatrixGroup {
     private Matrix matrix;

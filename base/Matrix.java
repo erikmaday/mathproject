@@ -121,6 +121,30 @@ public class Matrix {
         }
     }
 
+
+    /** Get a submatrix.
+     @param r Array of row indices.
+     @param i0 Initial column index
+     @param i1 Final column index
+     @return A(r(:),j0:j1)
+     @exception ArrayIndexOutOfBoundsException Submatrix indices
+     */
+    public Matrix getMatrix (int[] r, int j0, int j1) {
+        Matrix X = new Matrix(r.length,j1-j0+1);
+        double[][] B = X.toArray();
+        try {
+            for (int i = 0; i < r.length; i++) {
+                for (int j = j0; j <= j1; j++) {
+                    B[i][j-j0] = matrix[r[i]][j];
+                }
+            }
+        } catch(ArrayIndexOutOfBoundsException e) {
+            throw new ArrayIndexOutOfBoundsException("Submatrix indices");
+        }
+        return X;
+    }
+
+
     /**
      * String representation of matrix
      * Columns seperated by tabs, rows seperated by new lines

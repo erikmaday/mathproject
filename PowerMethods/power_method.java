@@ -1,7 +1,6 @@
 //package PowerMethods;
 //
-//import base.LinearAlgebra;
-//import base.LinearAlgebra;
+//import base.*;
 //import java.util.ArrayList;
 //import java.util.Random;
 //

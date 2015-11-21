@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * Created by Dom on 11/23/2014.
+ * Created by Erik on 11/21/2015.
  */
 public class GraphPlot extends Application {
 

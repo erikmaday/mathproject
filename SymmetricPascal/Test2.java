@@ -15,8 +15,8 @@ public class Test2 {
                 { 1, 5, 15, 35, 70}
         };
 
-        lu_fact LU = new lu_fact(new Matrix(exampleMatrix));
-        System.out.println(LU.getL().toString());
-        System.out.println(LU.getU().toString());
+        //lu_fact LU = new lu_fact(new Matrix(exampleMatrix));
+        //System.out.println(LU.getL().toString());
+        //System.out.println(LU.getU().toString());
     }
 }

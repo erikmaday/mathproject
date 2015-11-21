@@ -301,7 +301,7 @@ public class LinearAlgebra {
     /**
      * Find the determinant of the given matrix
      * @param matrix the given matrix
-     * @param n the size
+     * @param n size of the matrix
      * @return the determinant of the matrix
      */
     public static double determinant(Matrix matrix, int n) {
@@ -348,7 +348,7 @@ public class LinearAlgebra {
     public static double trace(Matrix m) {
         double tr = 0;
         double val = 0;
-        for (int x = m.getHeight(); x > 0; x--) {
+        for (int x = m.getHeight() - 1; x > 0; x--) {
             val = m.get(x, x);
             tr += val;
         }

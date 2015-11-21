@@ -1,8 +1,6 @@
 package PowerMethods;
 
 import base.*;
-import java.util.ArrayList;
-import java.util.Random;
 
 public class power_method {
 
@@ -22,10 +20,9 @@ public class power_method {
         this.v = v;
         this.tolerance = tolerance;
         this.N = N;
-
     }
 
-    private pmanswer getValues() {
+    public pmanswer getValues() {
         return getValuesHelper(new Vector(v), 0);
     }
 
@@ -42,7 +39,8 @@ public class power_method {
                 return getValuesHelper(guess, count);
             }
         }
-        return null;
+        double[] blank = {0};
+        return new pmanswer(new Vector(blank), 0, 0);
     }
 
     private double getEigenvalue(Vector eigen) {

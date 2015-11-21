@@ -1,0 +1,4 @@
+dir_to_ignore/out
+*.class
+*.iml
+*.xml

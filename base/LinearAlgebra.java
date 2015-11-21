@@ -243,14 +243,13 @@ public class LinearAlgebra {
      * @param s the given scalar
      * @return Matrix
      */
-    public static Matrix scalarMatrixMultiply(Matrix m, int s) {
-        double[][] ret = m.toArray();
-        for (int r = 0; r < ret.length; r++) {
-            for (int c = 0; c < ret[0].length; c++) {
-                ret[r][c] *= s;
+    public static double[][] scalarMatrixMultiply(double[][] m, int s) {
+        for (int r = 0; r < m.length; r++) {
+            for (int c = 0; c < m[0].length; c++) {
+                m[r][c] *= s;
             }
         }
-        return new Matrix(ret);
+        return m;
     }
 
     /**

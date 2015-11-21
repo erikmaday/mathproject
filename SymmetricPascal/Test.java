@@ -1,9 +1,6 @@
 package SymmetricPascal;
 
 import base.Matrix;
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
-
-import java.util.Formatter;
 
 /**
  * @author Erik Maday, CG Carson, Quinton Johnson

@@ -87,7 +87,6 @@ public class lu_fact {
     }
 
 
-
     public double[][] getL() {
         Matrix matrix = new Matrix(n, n, 0.0);
         double[][] L = matrix.toArray();

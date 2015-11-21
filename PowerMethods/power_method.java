@@ -22,27 +22,24 @@ public class power_method {
         this.v = v;
         this.tolerance = tolerance;
         this.N = N;
+
     }
 
-    public void approximateValues() {
-        Vector guess = new Vector(v);
-        Vector eigenvector = getEigenvector(guess, 0);
-        double eigenvalue = getEigenvalue(eigenvector);
-        System.out.println(eigenvector.toString());
-        System.out.println(eigenvalue);
+    private pmanswer getValues() {
+        return getValuesHelper(new Vector(v), 0);
     }
 
-    private Vector getEigenvector(Vector guess, int count) {
+    private pmanswer getValuesHelper(Vector guess, int count) {
         Vector previous = LinearAlgebra.vectorNorm(guess);
         guess = LinearAlgebra.vectorNorm(LinearAlgebra.matrixVectorMultiply(guess, new Matrix(A)));
-        //System.out.println(guess.toString());
         if (count < N) {
             count++;
-            double difference = LinearAlgebra.magnitude(LinearAlgebra.vectorSubtract(guess, previous));
+            double difference = LinearAlgebra.magnitude(LinearAlgebra.vectorAdd(guess, previous));
             if (difference <= tolerance) {
-                return guess;
+                pmanswer answer = new pmanswer(guess, getEigenvalue(guess), count);
+                return answer;
             } else {
-                return getEigenvector(guess, count);
+                return getValuesHelper(guess, count);
             }
         }
         return null;
@@ -52,15 +49,5 @@ public class power_method {
         double numerator = LinearAlgebra.dotProduct(LinearAlgebra.matrixVectorMultiply(eigen, new Matrix(A)), eigen);
         double denominator = LinearAlgebra.dotProduct(eigen, eigen);
         return numerator / denominator;
-    }
-
-    public static void main(String[] args) {
-        double[][] m = {
-                {2, 7},
-                {-1, -6}
-        };
-        double[] vec = {1, 0};
-        power_method p = new power_method(m, vec, .1, 1000);
-        p.approximateValues();
     }
 }

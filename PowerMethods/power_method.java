@@ -56,12 +56,11 @@ public class power_method {
 
     public static void main(String[] args) {
         double[][] m = {
-                {2, 12, 10},
-                {1, 5, 40},
-                {5, 6, 7}
+                {2, 7},
+                {-1, -6}
         };
-        double[] vec = {1, 1, 0};
-        power_method p = new power_method(m, vec, .001, 1000);
+        double[] vec = {1, 0};
+        power_method p = new power_method(m, vec, .1, 1000);
         p.approximateValues();
     }
 }

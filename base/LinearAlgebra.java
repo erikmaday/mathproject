@@ -15,6 +15,7 @@ public class LinearAlgebra {
 
     /**
      * Gets vector calculated by multiplying a matrix by a vector
+     * y = A * x
      * Precondition: matrix width must match vector length
      * @param m Matrix
      * @param v Vector
@@ -24,8 +25,7 @@ public class LinearAlgebra {
         int mHeight = m.getHeight();
         int mWidth = m.getWidth();
         if (v.getSize() != mWidth) {
-            //TODO
-            //throw size mismatch error
+            //throw new RunTimeException("size does not match up.");
         }
         double[] prod = new double[mHeight];
         for (int r = 0; r < mHeight; r++) {

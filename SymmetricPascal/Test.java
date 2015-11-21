@@ -30,12 +30,16 @@ public class Test {
         System.out.println("Q for Givens: \n" + qMatrix.toString());
         System.out.println("R for Givens: \n" + rMatrix.toString() );
         System.out.println("QR for Givens: \n" + rMatrix.toString());
-        System.out.println("Error for Givens: \n" + givensRotations.getError() + "\n");
+        System.out.println("Error for Givens: \n"
+                + givensRotations.getError() + "\n");
 
         // Test Householder
-        qr_fact_househ householderReflections = new qr_fact_househ(new Matrix(exampleMatrix));
-        Matrix qhMatrix = new Matrix(formatArray(householderReflections.getQ()));
-        Matrix rhMatrix = new Matrix(formatArray(householderReflections.getR()));
+        qr_fact_househ householderReflections =
+                new qr_fact_househ(new Matrix(exampleMatrix));
+        Matrix qhMatrix = new
+                Matrix(formatArray(householderReflections.getQ()));
+        Matrix rhMatrix = new
+                Matrix(formatArray(householderReflections.getR()));
         System.out.println("Q for Householder: \n" + qhMatrix.toString());
         System.out.println("R for Householder: \n" + rhMatrix.toString());
     }

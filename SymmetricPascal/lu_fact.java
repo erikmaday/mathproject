@@ -5,7 +5,9 @@ import base.Matrix;
 /**
  * @author Erik Maday, CG Carson, Quinton Johnson
  * @version 1.0
- * got ideas from code seen here http://www.iaa.ncku.edu.tw/~dychiang/lab/program/mohr3d/source/Jama%5CLUDecomposition.html
+ * got ideas from code seen here
+ * http://www.iaa.ncku.edu.tw/~dychiang/
+ * lab/program/mohr3d/source/Jama%5CLUDecomposition.html
  */
 public class lu_fact {
 
@@ -70,7 +72,7 @@ public class lu_fact {
     /**
      * creates square identity matrix with dimensions
      * of the inputed size
-     * @param int size of identity matrix to create
+     * @param size of identity matrix to create
      * @return 2-D double array that is identity matrix
      */
     private double[][] createIdentity(int size) {

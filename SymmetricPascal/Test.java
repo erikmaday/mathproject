@@ -15,6 +15,14 @@ public class Test {
                 { 1, 4, 10, 20}
         };
 
+        // Test LU
+        lu_fact luFact = new lu_fact(exampleMatrix);
+        Matrix lMatrix = new Matrix(formatArray(luFact.getL()));
+        Matrix uMatrix = new Matrix(formatArray(luFact.getU()));
+        System.out.println("L for LU: \n" + lMatrix.toString());
+        System.out.println("U for LU: \n" + uMatrix.toString());
+
+        // Test Givens
         qr_fact_givens givensRotations = new qr_fact_givens(exampleMatrix);
         Matrix qMatrix = new Matrix(formatArray(givensRotations.getQ()));
         Matrix rMatrix = new Matrix(formatArray(givensRotations.getR()));
@@ -22,7 +30,14 @@ public class Test {
         System.out.println("Q for Givens: \n" + qMatrix.toString());
         System.out.println("R for Givens: \n" + rMatrix.toString() );
         System.out.println("QR for Givens: \n" + rMatrix.toString());
-        System.out.println("Error for Givens: \n" + givensRotations.getError());
+        System.out.println("Error for Givens: \n" + givensRotations.getError() + "\n");
+
+        // Test Householder
+        qr_fact_househ householderReflections = new qr_fact_househ(new Matrix(exampleMatrix));
+        Matrix qhMatrix = new Matrix(formatArray(householderReflections.getQ()));
+        Matrix rhMatrix = new Matrix(formatArray(householderReflections.getR()));
+        System.out.println("Q for Householder: \n" + qhMatrix.toString());
+        System.out.println("R for Householder: \n" + rhMatrix.toString());
     }
 
     public static double[][] formatArray(double[][] array) {

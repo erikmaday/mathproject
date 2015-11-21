@@ -127,18 +127,4 @@ public class lu_fact {
             System.out.println();
         }
     }
-
-
-    public static void main(String[] args) {
-//        double[][] arr = {
-//            {1,1,1,1},
-//            {1,2,3,4},
-//            {1,3,6,10},
-//            {1,4,10,20}
-//        };
-//        lu_fact test = new lu_fact(arr);
-//        printMatrix(test.getL());
-//        System.out.println();
-//        printMatrix(test.getU());
-    }
 }

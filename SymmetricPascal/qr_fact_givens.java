@@ -2,8 +2,6 @@ package SymmetricPascal;
 
 import base.LinearAlgebra;
 import base.Matrix;
-
-import javax.sound.sampled.Line;
 import java.util.Stack;
 
 /**

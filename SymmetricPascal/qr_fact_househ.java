@@ -54,27 +54,6 @@ public class qr_fact_househ {
     }
 
     /**
-     * Calculates and returns the R matrix for Householders
-     * @return the R matrix
-     */
-    public double[][] getR () {
-        Matrix X = new Matrix(n,n);
-        double[][] R = X.toArray();
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (i < j) {
-                    R[i][j] = QR[i][j];
-                } else if (i == j) {
-                    R[i][j] = rightDiagonal[i];
-                } else {
-                    R[i][j] = 0.0;
-                }
-            }
-        }
-        return R;
-    }
-
-    /**
      * Calculates and returns the Q matrix for Householders
      * @return the Q matrix
      */
@@ -100,5 +79,26 @@ public class qr_fact_househ {
             }
         }
         return Q;
+    }
+
+    /**
+     * Calculates and returns the R matrix for Householders
+     * @return the R matrix
+     */
+    public double[][] getR () {
+        Matrix X = new Matrix(n,n);
+        double[][] R = X.toArray();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i < j) {
+                    R[i][j] = QR[i][j];
+                } else if (i == j) {
+                    R[i][j] = rightDiagonal[i];
+                } else {
+                    R[i][j] = 0.0;
+                }
+            }
+        }
+        return R;
     }
 }

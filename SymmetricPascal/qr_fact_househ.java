@@ -1,5 +1,6 @@
 package SymmetricPascal;
 
+import base.LinearAlgebra;
 import base.Matrix;
 
 /**
@@ -12,6 +13,7 @@ public class qr_fact_househ {
     private int m;
     private int n;
     private double[] rightDiagonal;
+    private double error;
 
     /**
      * Constructor, initializes matrices
@@ -51,6 +53,11 @@ public class qr_fact_househ {
             }
             rightDiagonal[k] = -norm;
         }
+
+        //Calculate Error
+        Matrix qrMinusA = LinearAlgebra.matrixSubtraction(new Matrix(QR), A);
+        double error = LinearAlgebra.norm(qrMinusA);
+        this.error = Math.abs(error);
     }
 
     /**
@@ -100,5 +107,13 @@ public class qr_fact_househ {
             }
         }
         return R;
+    }
+
+    /**
+     * Returns the error
+     * @return the error
+     */
+    public double getError() {
+        return error;
     }
 }

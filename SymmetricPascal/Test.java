@@ -22,6 +22,7 @@ public class Test {
         Matrix uMatrix = new Matrix(formatArray(luFact.getU().toArray()));
         System.out.println("L for LU: \n" + lMatrix.toString());
         System.out.println("U for LU: \n" + uMatrix.toString());
+        System.out.println("Error for LU: " + luFact.getError() + "\n");
 
         // Test Givens
         qr_fact_givens givensRotations = new qr_fact_givens(exampleMatrix);
@@ -29,6 +30,8 @@ public class Test {
         Matrix rMatrix = new Matrix(formatArray(givensRotations.getR()));
         System.out.println("Q for Givens: \n" + qMatrix.toString());
         System.out.println("R for Givens: \n" + rMatrix.toString() );
+        System.out.println("Error for Givens: " +
+                givensRotations.getError() + "\n");
 
         // Test Householder
         qr_fact_househ householderReflections =
@@ -39,6 +42,8 @@ public class Test {
                 Matrix(formatArray(householderReflections.getR()));
         System.out.println("Q for Householder: \n" + qhMatrix.toString());
         System.out.println("R for Householder: \n" + rhMatrix.toString());
+        System.out.println("Error for Householder: " +
+                householderReflections.getError() + "\n");
     }
 
     public static double[][] formatArray(double[][] array) {

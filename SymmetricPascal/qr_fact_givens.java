@@ -15,6 +15,7 @@ public class qr_fact_givens {
     private double[][] Q;
     private double[][] R;
     private double[][] QR;
+    private double error;
 
     /**
      * A method to get Q for QR factorization
@@ -55,7 +56,7 @@ public class qr_fact_givens {
         double[][] matrixR = matrix;
         int i = 0;
         int j = 0;
-        //Calculating Matrix
+        // Calculating Matrix
         while (i < matrixR[0].length) {
             int level = height - 1;
             while (j < level) {
@@ -76,18 +77,26 @@ public class qr_fact_givens {
             j++;
         }
 
-        //Setting R
+        // Setting R
         this.R = matrixR;
         double[][] first = LinearAlgebra.transposeMatrix(givensMatrices.pop());
         while (!givensMatrices.empty()) {
             first = LinearAlgebra.multiplyMatrix(LinearAlgebra.
                     transposeMatrix(givensMatrices.pop()), first);
         }
-        //Setting Q
+        // Setting Q
         this.Q = first;
 
-        //Setting QR
+        // Setting QR
         this.QR = LinearAlgebra.multiplyMatrix(first, matrixR);
+
+        //Calculate Error
+        Matrix qTimesR = new Matrix(LinearAlgebra.multiplyMatrix(Q, R));
+        Matrix qrMinusA = LinearAlgebra.matrixSubtraction(qTimesR,
+                new Matrix(matrix));
+        double error = LinearAlgebra.norm(qrMinusA);
+        this.error = Math.abs(error);
+
     }
 
     /**
@@ -133,5 +142,13 @@ public class qr_fact_givens {
             }
         }
         return diagonalMatrix;
+    }
+
+    /**
+     * Returns the error
+     * @return the error
+     */
+    public double getError() {
+        return error;
     }
 }

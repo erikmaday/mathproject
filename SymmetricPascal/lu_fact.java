@@ -2,8 +2,6 @@ package SymmetricPascal;
 
 import base.Matrix;
 import base.LinearAlgebra;
-
-import javax.sound.sampled.Line;
 import java.util.LinkedList;
 
 /**
@@ -16,6 +14,7 @@ public class lu_fact {
     private Matrix U;
     private Matrix L;
     private int n;
+    private double error;
 
     /**
      * Constructor, calculates the LU factorization for the given matrix
@@ -39,7 +38,7 @@ public class lu_fact {
         for (int j = 0; j < n; j++) {
             for (int i = 1; i < n; i++) {
                 if (j < i) {
-                    double temp = -1 * upper[i][j] / upper[j][j];
+                    double newValue = -1 * upper[i][j] / upper[j][j];
                     double[][] temporary = new double[n][n];
                     for (int m = 0; m < n; m++) {
                         for (int p = 0; p < n; p++) {
@@ -48,10 +47,10 @@ public class lu_fact {
                             }
                         }
                     }
-                    temporary[i][j] = temp;
+                    temporary[i][j] = newValue;
                     matrixList.add(new Matrix(temporary));
                     for (int k = 0; k < n; k++) {
-                        upper[i][k] = upper[i][k] + (temp * upper[j][k]);
+                        upper[i][k] = upper[i][k] + (newValue * upper[j][k]);
                     }
                 }
             }
@@ -66,6 +65,7 @@ public class lu_fact {
             }
         }
 
+        // Calculate L and U
         this.L = lMatrix;
         while (matrixList.peek() != null) {
             lMatrix = matrixList.remove();
@@ -80,6 +80,13 @@ public class lu_fact {
                     lMatrix.toArray()));
         }
         this.U = new Matrix(upper);
+
+        // Calculate Error
+        Matrix luTimes = new
+                Matrix(LinearAlgebra.multiplyMatrix(L.toArray(), U.toArray()));
+        Matrix luMinusA = LinearAlgebra.matrixSubtraction(luTimes, A);
+        double error = LinearAlgebra.norm(luMinusA);
+        this.error = error;
     }
 
     /**
@@ -96,5 +103,13 @@ public class lu_fact {
      */
     public Matrix getU() {
         return U;
+    }
+
+    /**
+     * Returns the error
+     * @return the error
+     */
+    public double getError() {
+        return error;
     }
 }

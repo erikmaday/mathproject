@@ -15,7 +15,6 @@ public class qr_fact_givens {
     private double[][] Q;
     private double[][] R;
     private double[][] QR;
-    private static double error;
 
     /**
      * A method to get Q for QR factorization
@@ -89,12 +88,6 @@ public class qr_fact_givens {
 
         //Setting QR
         this.QR = LinearAlgebra.multiplyMatrix(first, matrixR);
-
-        //Finding Error
-        double[][] qTimesR = LinearAlgebra.multiplyMatrix(Q, R);
-        Matrix subtract = LinearAlgebra.matrixSubtraction(new Matrix(qTimesR),
-                new Matrix(matrix));
-        this.error = LinearAlgebra.norm(subtract);
     }
 
     /**
@@ -140,13 +133,5 @@ public class qr_fact_givens {
             }
         }
         return diagonalMatrix;
-    }
-
-    /**
-     * Returns the calculated error of the rotation matrix
-     * @return the error
-     */
-    public double getError() {
-        return this.error;
     }
 }

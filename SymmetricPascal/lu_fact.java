@@ -1,132 +1,100 @@
 package SymmetricPascal;
 
 import base.Matrix;
+import base.LinearAlgebra;
+
+import javax.sound.sampled.Line;
+import java.util.LinkedList;
 
 /**
  * @author Erik Maday, CG Carson, Quinton Johnson
  * @version 1.0
- * got ideas from code seen here
- * http://www.iaa.ncku.edu.tw/~dychiang/
- * lab/program/mohr3d/source/Jama%5CLUDecomposition.html
  */
 public class lu_fact {
 
-    private double[][] A;
-    private double[][] LU;
-    private double[][] L;
-    private double[][] U;
-    private int n, pivsign;
-    private int[] piv;
+    private Matrix A;
+    private Matrix U;
+    private Matrix L;
+    private int n;
 
-    public lu_fact (double[][] A) {
+    /**
+     * Constructor, calculates the LU factorization for the given matrix
+     * @param A the input matrix
+     */
+    public lu_fact(Matrix A) {
         this.A = A;
-        LU = this.A;
-        n = this.A.length;
-        piv = new int[n];
+        n = A.getHeight();
+
+        LinkedList<Matrix> matrixList = new LinkedList<>();
+        double [][]upper = A.toArray();
+        double [][]identity = new double[n][n];
         for (int i = 0; i < n; i++) {
-            piv[i] = i;
+            for (int j = 0; j < n; j++) {
+                if (i == j) {
+                    identity[i][j] = 1;
+                }
+            }
         }
-        pivsign = 1;
-        double[] LUrowi;
-        double[] LUcolj = new double[n];
 
         for (int j = 0; j < n; j++) {
-
-            for (int i = 0; i < n; i++) {
-                LUcolj[i] = LU[i][j];
-            }
-
-            for (int i = 0; i < n; i++) {
-                LUrowi = LU[i];
-                int kmax = Math.min(i,j);
-                double s = 0.0;
-                for (int k = 0; k < kmax; k++) {
-                    s += LUrowi[k]*LUcolj[k];
-                }
-
-                LUrowi[j] = LUcolj[i] -= s;
-            }
-
-            int p = j;
-            for (int i = j+1; i < n; i++) {
-                if (Math.abs(LUcolj[i]) > Math.abs(LUcolj[p])) {
-                    p = i;
-                }
-            }
-            if (p != j) {
-                for (int k = 0; k < n; k++) {
-                    double t = LU[p][k]; LU[p][k] = LU[j][k]; LU[j][k] = t;
-                }
-                int k = piv[p]; piv[p] = piv[j]; piv[j] = k;
-                pivsign = -pivsign;
-            }
-
-            if (j < n & LU[j][j] != 0.0) {
-                for (int i = j+1; i < n; i++) {
-                    LU[i][j] /= LU[j][j];
+            for (int i = 1; i < n; i++) {
+                if (j < i) {
+                    double temp = -1 * upper[i][j] / upper[j][j];
+                    double[][] temporary = new double[n][n];
+                    for (int m = 0; m < n; m++) {
+                        for (int p = 0; p < n; p++) {
+                            if (m == p) {
+                                temporary[m][p] = 1;
+                            }
+                        }
+                    }
+                    temporary[i][j] = temp;
+                    matrixList.add(new Matrix(temporary));
+                    for (int k = 0; k < n; k++) {
+                        upper[i][k] = upper[i][k] + (temp * upper[j][k]);
+                    }
                 }
             }
         }
+
+        Matrix lMatrix = matrixList.remove();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i != j) {
+                    lMatrix.set(i, j, -1 * lMatrix.get(i, j));
+                }
+            }
+        }
+
+        this.L = lMatrix;
+        while (matrixList.peek() != null) {
+            lMatrix = matrixList.remove();
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (i != j) {
+                        lMatrix.set(i, j, -1 * lMatrix.get(i, j));
+                    }
+                }
+            }
+            this.L = new Matrix(LinearAlgebra.multiplyMatrix(L.toArray(),
+                    lMatrix.toArray()));
+        }
+        this.U = new Matrix(upper);
     }
 
     /**
-     * creates square identity matrix with dimensions
-     * of the inputed size
-     * @param size of identity matrix to create
-     * @return 2-D double array that is identity matrix
+     * Returns the calculated lower matrix
+     * @return the L matrix
      */
-    private double[][] createIdentity(int size) {
-        double[][] identity = new double[size][size];
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                identity[i][j] = 0;
-            }
-        }
-        for (int i = 0; i < size; i++) {
-            identity[i][i] = 1;
-        }
-        return identity;
-    }
-
-
-    public double[][] getL() {
-        Matrix matrix = new Matrix(n, n, 0.0);
-        double[][] L = matrix.toArray();
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (i > j) {
-                    L[i][j] = LU[i][j];
-                } else if (i == j) {
-                    L[i][j] = 1.0;
-                } else {
-                    L[i][j] = 0.0;
-                }
-            }
-        }
+    public Matrix getL() {
         return L;
     }
 
-    public double[][] getU() {
-        Matrix matrix = new Matrix(n, n, 0.0);
-        double[][] U = matrix.toArray();
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (i <= j) {
-                    U[i][j] = LU[i][j];
-                } else {
-                    U[i][j] = 0.0;
-                }
-            }
-        }
+    /**
+     * Returns the calculated upper matrix
+     * @return the U matrix
+     */
+    public Matrix getU() {
         return U;
-    }
-
-    private static void printMatrix(double[][] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                System.out.print(arr[i][j] + "\t");
-            }
-            System.out.println();
-        }
     }
 }

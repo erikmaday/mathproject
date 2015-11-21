@@ -8,6 +8,7 @@ import base.Matrix;
 public class Test {
 
     public static void main(String[] args) {
+
         double[][] exampleMatrix = new double[][]{
                 { 1, 1, 1, 1},
                 { 1, 2, 3, 4},
@@ -16,9 +17,9 @@ public class Test {
         };
 
         // Test LU
-        lu_fact luFact = new lu_fact(exampleMatrix);
-        Matrix lMatrix = new Matrix(formatArray(luFact.getL()));
-        Matrix uMatrix = new Matrix(formatArray(luFact.getU()));
+        lu_fact luFact = new lu_fact(new Matrix(exampleMatrix));
+        Matrix lMatrix = new Matrix(formatArray(luFact.getL().toArray()));
+        Matrix uMatrix = new Matrix(formatArray(luFact.getU().toArray()));
         System.out.println("L for LU: \n" + lMatrix.toString());
         System.out.println("U for LU: \n" + uMatrix.toString());
 
@@ -26,12 +27,8 @@ public class Test {
         qr_fact_givens givensRotations = new qr_fact_givens(exampleMatrix);
         Matrix qMatrix = new Matrix(formatArray(givensRotations.getQ()));
         Matrix rMatrix = new Matrix(formatArray(givensRotations.getR()));
-        Matrix qrMatrix = new Matrix(formatArray(givensRotations.getQR()));
         System.out.println("Q for Givens: \n" + qMatrix.toString());
         System.out.println("R for Givens: \n" + rMatrix.toString() );
-        System.out.println("QR for Givens: \n" + rMatrix.toString());
-        System.out.println("Error for Givens: \n"
-                + givensRotations.getError() + "\n");
 
         // Test Householder
         qr_fact_househ householderReflections =
@@ -45,7 +42,6 @@ public class Test {
     }
 
     public static double[][] formatArray(double[][] array) {
-
         double[][] newArray = new double[array.length][array[0].length];
         for(int i = 0; i < array.length; i++){
             for(int y = 0; y < array[0].length; y++){

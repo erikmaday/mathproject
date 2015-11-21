@@ -1,4 +1,4 @@
-dir_to_ignore/out
+/out
 *.class
 *.iml
 *.xml

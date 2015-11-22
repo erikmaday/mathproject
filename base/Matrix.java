@@ -121,6 +121,13 @@ public class Matrix {
         }
     }
 
+    public Vector getColumn(int col) {
+        double[] arr = new double[this.height];
+        for (int row = 0; row < height; row++) {
+            arr[row] = this.get(row, col);
+        }
+        return new Vector(arr);
+    }
 
     /** Get a submatrix.
      @param r Array of row indices.
@@ -142,6 +149,10 @@ public class Matrix {
             throw new ArrayIndexOutOfBoundsException("Submatrix indices");
         }
         return X;
+    }
+
+    public Matrix copy() {
+        return new Matrix(matrix);
     }
 
 

@@ -13,7 +13,6 @@ public class lu_fact {
     private Matrix A;
     private Matrix U;
     private Matrix L;
-    private int n;
     private double error;
 
     /**
@@ -22,6 +21,7 @@ public class lu_fact {
      */
     public lu_fact(Matrix A) {
         this.A = A;
+        int n;
         n = A.getHeight();
 
         LinkedList<Matrix> matrixList = new LinkedList<>();

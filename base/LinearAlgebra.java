@@ -102,6 +102,31 @@ public class LinearAlgebra {
     }
 
     /**
+     * Multiplies the first matrix by the second.
+     * @param A the first matrix
+     * @param B the second matrix
+     * @return A * B
+     */
+    public static double[][] multiplyMatrix2(Matrix A, Matrix B) {
+        int mA = A.toArray().length;
+        int nA = A.toArray()[0].length;
+        int mB = B.toArray().length;
+        int nB = B.toArray()[0].length;
+        if (nA != mB) {
+            throw new IllegalArgumentException("Incompatible sizes.");
+        }
+        double[][] C = new double[mA][nB];
+        for (int i = 0; i < mA; i++) {
+            for (int j = 0; j < nB; j++) {
+                for (int k = 0; k < nA; k++) {
+                    C[i][j] += A.toArray()[i][k] * B.toArray()[k][j];
+                }
+            }
+        }
+        return C;
+    }
+
+    /**
      * Returns the dot product of two vectors
      * @param v1 Vector
      * @param v2 Vector

@@ -151,6 +151,34 @@ public class Matrix {
         return X;
     }
 
+    public Matrix matrixMultiplier(Matrix secondMatrix) {
+        if (this.width != secondMatrix.getHeight()) {
+
+            System.out.println("Number of columns of 1st matrix do not match the rows of 2nd.");
+            return null;
+        } else {
+            double[][] resultantMatrix = new double[this.height][secondMatrix.width];
+            for (int z = 0; z < this.height; z++) {
+                for(int zz = 0; zz < secondMatrix.getWidth(); zz++) {
+                    resultantMatrix[z][zz] = 0.0;
+                }
+            }
+
+            for (int i = 0; i < height; i++) {
+                for (int j = 0; j < secondMatrix.getWidth(); j++) {
+                    for(int z = 0; z < secondMatrix.getHeight(); z++) {
+                        resultantMatrix[i][j] += (this.matrix[i][z] * secondMatrix.toArray()[z][j]);
+                    }
+                }
+            }
+
+
+            Matrix multipliedMatrix = new Matrix(resultantMatrix);
+            return multipliedMatrix;
+
+        }
+    }
+
     public Matrix copy() {
         return new Matrix(matrix);
     }

@@ -1,7 +1,7 @@
 ###MATH 2605 Project###
 
 
-By Erik Maday, Christopher Gordon, and Quinton Johnson
+By Erik Maday, Christopher Gordon Carson, and Quinton Johnson
 
 Implementations of multiple Linear Algebra algroithms for MATH 2605.
 

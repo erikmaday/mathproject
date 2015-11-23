@@ -18,14 +18,14 @@ public class solve_px_b {
         Matrix P = p.getPascalMatrix();
         Vector B = p.getPascalVector();
         System.out.println("P\n" + P.toString());
-        solve_lu_b lup = new solve_lu_b(P, B);
+        solve_lu_b lup = new solve_lu_b(new Matrix(P.toArray()), B);
         Matrix LU = lup.getLU();
         System.out.println("LU\n" + LU.toString());
-        System.out.println("P\n" + P.toString());
+        System.out.println("P\n" + pascal.toString());
         Matrix LUDiff = LinearAlgebra.matrixSubtraction(LU, P);
         LUError = LinearAlgebra.norm(LinearAlgebra.matrixSubtraction(new Matrix(LU.toArray()), new Matrix(P.toArray())));
         System.out.println("LU\n" + LU.toString());
-        System.out.println("P\n" + P.toString());
+        System.out.println("P\n" + pascal.toString());
         System.out.println(LUError);
         solve_ax_b pxb = new solve_ax_b(LinearAlgebra.augment(new Matrix(P.toArray()), new Vector(B.toArray())));
         x = pxb.getAnswer();

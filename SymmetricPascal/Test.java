@@ -5,6 +5,7 @@ import base.Vector;
 
 /**
  * @author Erik Maday, CG Carson, Quinton Johnson
+ * @version 1.0
  */
 public class Test {
 
@@ -46,7 +47,7 @@ public class Test {
         System.out.println("Error for Householder: " +
                 householderReflections.getError() + "\n");
 
-
+        // Test solve_lu_b
         double[][] m = {
                 {1, -2, 3},
                 {2, 1, 1},
@@ -56,6 +57,7 @@ public class Test {
         solve_lu_b sol = new solve_lu_b(new Matrix(m), new Vector(v));
         System.out.println(sol.getX().toString());
 
+        // Test solve_qr_b
         double[][] z = {
                 {1, -2, 3},
                 {2, 1, 1},
@@ -65,6 +67,7 @@ public class Test {
         solve_qr_b solu = new solve_qr_b(new Matrix(z), new Vector(f));
         System.out.println(solu.getX().toString());
 
+        // Test Pascal Matrix
         pascal p = new pascal(5);
         System.out.println(p.getPascalMatrix().toString());
     }

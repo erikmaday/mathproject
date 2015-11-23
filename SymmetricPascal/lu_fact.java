@@ -17,10 +17,10 @@ public class lu_fact {
 
     /**
      * Constructor, calculates the LU factorization for the given matrix
-     * @param A the input matrix
+     * @param m the input matrix
      */
-    public lu_fact(Matrix A) {
-        this.A = A;
+    public lu_fact(Matrix q) {
+        this.A = q;
         int n;
         n = A.getHeight();
 

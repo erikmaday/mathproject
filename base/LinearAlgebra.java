@@ -340,6 +340,17 @@ public class LinearAlgebra {
         return det;
     }
 
+    public static Matrix augment(Matrix main, Vector vec) {
+        Matrix augmented = new Matrix(new double[main.getHeight()][main.getWidth() + 1]);
+        for (int r = 0; r < main.getHeight(); r++) {
+            for (int c = 0; c < main.getWidth(); c++) {
+                augmented.set(r, c, main.get(r, c));
+            }
+            augmented.set(r, main.getWidth(), vec.get(r));
+        }
+        return augmented;
+    }
+
     /**
      * Finds the trace of a square matrix by finding the sum of the diagonal
      * @param m Matrix

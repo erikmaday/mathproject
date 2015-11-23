@@ -1,6 +1,7 @@
 package SymmetricPascal;
 
 import base.Matrix;
+import base.Vector;
 
 /**
  * @author Erik Maday, CG Carson, Quinton Johnson
@@ -44,13 +45,23 @@ public class Test {
         System.out.println("R for Householder: \n" + rhMatrix.toString());
         System.out.println("Error for Householder: " +
                 householderReflections.getError() + "\n");
+
+        
+        double[][] m = {
+                {1, -2, 3},
+                {2, 1, 1},
+                {-3, 2, -2}
+        };
+        double[] v = {7, 4, -10};
+        solve_lu_b sol = new solve_lu_b(new Matrix(m), new Vector(v));
+        System.out.println(sol.getX().toString());
     }
 
     public static double[][] formatArray(double[][] array) {
         double[][] newArray = new double[array.length][array[0].length];
-        for(int i = 0; i < array.length; i++){
-            for(int y = 0; y < array[0].length; y++){
-                newArray[i][y] = (double)Math.round(array[i][y] * 10000)
+        for (int i = 0; i < array.length; i++) {
+            for (int y = 0; y < array[0].length; y++) {
+                newArray[i][y] = (double) Math.round(array[i][y] * 10000)
                         / 10000;
             }
         }

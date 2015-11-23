@@ -19,13 +19,13 @@ public class Matrix {
     }
 
     /** Set a single element.
-     * @param i row index.
-     * @param j column index.
+     * @param r row index.
+     * @param c column index.
      * @param s matrix(i,j).
      * @exception ArrayIndexOutOfBoundsException
      */
-    public void set(int i, int j, double s) {
-        matrix[i][j] = s;
+    public void set(int r, int c, double s) {
+        matrix[r][c] = s;
     }
 
     /**
@@ -154,7 +154,6 @@ public class Matrix {
     public Matrix copy() {
         return new Matrix(matrix);
     }
-
 
     /**
      * String representation of matrix

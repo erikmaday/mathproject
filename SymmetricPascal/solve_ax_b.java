@@ -4,7 +4,9 @@ import base.Matrix;
 import base.Vector;
 
 /**
- * Created by erikmaday on 11/22/15.
+ * @author Erik Maday, CG Carson, Quinton Johnson
+ * @version 1.0
+ * ideas from http://zurb.com/forrst/posts/Taking_a_matrix_and_reducing_it_to_reduced_row_e-5fk
  */
 public class solve_ax_b {
 
@@ -13,7 +15,7 @@ public class solve_ax_b {
 
     public solve_ax_b (Matrix augmented) {
         this.reduced = reduced(forwardElimination(augmented));
-        Vector answer = reduced.getColumn(reduced.getWidth() - 1);
+        this.answer = reduced.getColumn(reduced.getWidth() - 1);
     }
 
     private Matrix forwardElimination(Matrix A) {

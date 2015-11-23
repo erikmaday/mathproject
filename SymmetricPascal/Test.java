@@ -46,7 +46,7 @@ public class Test {
         System.out.println("Error for Householder: " +
                 householderReflections.getError() + "\n");
 
-        
+
         double[][] m = {
                 {1, -2, 3},
                 {2, 1, 1},
@@ -55,6 +55,18 @@ public class Test {
         double[] v = {7, 4, -10};
         solve_lu_b sol = new solve_lu_b(new Matrix(m), new Vector(v));
         System.out.println(sol.getX().toString());
+
+        double[][] z = {
+                {1, -2, 3},
+                {2, 1, 1},
+                {-3, 2, -2}
+        };
+        double[] f = {7, 4, -10};
+        solve_qr_b solu = new solve_qr_b(new Matrix(z), new Vector(f));
+        System.out.println(solu.getX().toString());
+
+        pascal p = new pascal(5);
+        System.out.println(p.getPascalMatrix().toString());
     }
 
     public static double[][] formatArray(double[][] array) {

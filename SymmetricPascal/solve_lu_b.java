@@ -10,12 +10,18 @@ package SymmetricPascal;
  */
 public class solve_lu_b {
 
+    private Matrix LU;
     private Vector x;
 
+    /**
+     * @param m is matrix to decompose to LU
+     * @param B vector B in LU*x=B
+     */
     public solve_lu_b(Matrix m, Vector B) {
         lu_fact fact = new lu_fact(m);
         Matrix L = fact.getL();
         Matrix U = fact.getU();
+        this.LU = new Matrix(LinearAlgebra.multiplyMatrix(L.toArray(), U.toArray()));
         Matrix LB = LinearAlgebra.augment(L, B);
 
         solve_ax_b LYB = new solve_ax_b(LB);
@@ -28,5 +34,9 @@ public class solve_lu_b {
 
     public Vector getX() {
         return x;
+    }
+
+    public Matrix getLU() {
+        return LU;
     }
 }

@@ -83,28 +83,22 @@ public class LinearAlgebra {
      * @return A * B
      */
     public static double[][] multiplyMatrix(double[][] A, double[][] B) {
-        //TODO 
-        //check for size mismatch
-
-        int aRows = A.length;
-        int aCols = A[0].length;
-        int bCols = B[0].length;
-
-        double[][] ret = new double[aRows][bCols];
-        for (int r = 0; r < 2; r++) {
-            for (int c = 0; c < 2; c++) {
-                ret[r][c] = 0.00000;
-            }
+        int mA = A.length;
+        int nA = A[0].length;
+        int mB = B.length;
+        int nB = B[0].length;
+        if (nA != mB) {
+            throw new IllegalArgumentException("Incompatible sizes.");
         }
-
-        for (int i = 0; i < aRows; i++) {
-            for (int j = 0; j < bCols; j++) {
-                for (int k = 0; k < aCols; k++) {
-                    ret[i][j] += A[i][k] * B[k][j];
+        double[][] C = new double[mA][nB];
+        for (int i = 0; i < mA; i++) {
+            for (int j = 0; j < nB; j++) {
+                for (int k = 0; k < nA; k++) {
+                    C[i][j] += A[i][k] * B[k][j];
                 }
             }
         }
-        return ret;
+        return C;
     }
 
     /**

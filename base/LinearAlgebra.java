@@ -107,7 +107,7 @@ public class LinearAlgebra {
      * @param B the second matrix
      * @return A * B
      */
-    public static double[][] multiplyMatrix2(Matrix A, Matrix B) {
+    public double[][] multiplyMatrix2(Matrix A, Matrix B) {
         int mA = A.toArray().length;
         int nA = A.toArray()[0].length;
         int mB = B.toArray().length;

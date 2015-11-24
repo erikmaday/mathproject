@@ -1,4 +1,4 @@
-package PartTwo;
+package PartThree;
 
 import javafx.application.Application;
 import javafx.scene.Group;

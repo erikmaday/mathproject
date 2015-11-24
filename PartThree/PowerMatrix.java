@@ -1,4 +1,4 @@
-package PartTwo;
+package PartThree;
 
 import base.LinearAlgebra;
 import java.util.Random;

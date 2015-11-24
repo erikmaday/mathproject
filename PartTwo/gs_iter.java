@@ -1,6 +1,6 @@
 //<<<<<<< HEAD
 //<<<<<<< HEAD
-//package PartThree;
+//package PartTwo;
 //
 //import java.io.BufferedReader;
 //import java.io.IOException;
@@ -21,7 +21,7 @@
 //=======
 //=======
 //>>>>>>> origin/master
-////package PartThree;
+////package PartTwo;
 ////
 ////import java.io.BufferedReader;
 ////import java.io.IOException;

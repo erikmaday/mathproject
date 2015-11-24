@@ -1,4 +1,4 @@
-package PartThree;
+package PartTwo;
 
 /**
  * @author Erik Maday, CG Carson, Quinton Johnson

@@ -2,6 +2,8 @@ package PartTwo;
 
 import base.Matrix;
 
+import java.util.Random;
+
 /**
  * Created by erikmaday on 11/24/15.
  */
@@ -11,18 +13,20 @@ public class jacobi_iter {
     private Matrix b; //stands for vector b
     private Matrix x0; //stands for the initial guess
     private double tolerance;
-    private int maxIterations = 1000;
+    private int maxIterations;
     private int N = 0;
 
-    public jacobi_iter(Matrix a, Matrix b, Matrix x0, double tolerance) {
+    public jacobi_iter(Matrix a, Matrix b, Matrix x0, double tolerance, int M) {
         this.a = a;
         this.b = b;
         this.x0 = x0;
         this.tolerance = tolerance;
+        this.maxIterations = M;
+        jacobi();
     }
 
     //if augmented
-    public jacobi_iter(Matrix a, Matrix x0, double tolerance) {
+    public jacobi_iter(Matrix a, Matrix x0, double tolerance, int M) {
         double temp[][] = new double[a.getRowDimension()][a.getColumnDimension() - 1];
         double tempB[][] = new double[a.getRowDimension()][1];
         for (int i = 0; i < a.getRowDimension(); i++) {
@@ -38,9 +42,11 @@ public class jacobi_iter {
         this.b = new Matrix(tempB);
         this.x0 = x0;
         this.tolerance = tolerance;
+        this.maxIterations = M;
+        jacobi();
     }
 
-    public Matrix jacobi() {
+    private Matrix jacobi() {
         int n = a.getColumnDimension();
         double[][] original = a.getArrayCopy();
         double[][] s = new double[n][n];
@@ -115,35 +121,59 @@ public class jacobi_iter {
         return -1;
     }
 
-    public int getIterations() {
+    public static jacobi_iter genRandom() {
+        double[][] A = new double[3][4];
+        A[0][0] = 1.0;
+        A[0][1] = 1.0/2.0;
+        A[0][2] = 1.0/3.0;
+        A[1][0] = 1.0/2.0;
+        A[1][1] = 1.0/3.0;
+        A[1][2] = 1.0/4.0;
+        A[2][0] = 1.0/3.0;
+        A[2][1] = 1.0/4.0;
+        A[2][2] = 1.0/5.0;
+        A[0][3] = .1;
+        A[1][3] = .1;
+        A[2][3] = .1;
+        double[][] guess = new double[3][1];
+        guess[0][0] = randomNumber();
+        guess[1][0] = randomNumber();
+        guess[2][0] = randomNumber();
+        return new jacobi_iter(new Matrix(A), new Matrix(guess), .00005, 100);
+    }
+
+    private static double randomNumber() {
+        Random r = new Random();
+        return -10 + (10 - (-10)) * r.nextDouble();
+    }
+
+    public Matrix getB() {
+        return b;
+    }
+
+    public Matrix getX0() {
+        return x0;
+    }
+
+    public int getN() {
         return N;
     }
 
-    public int getMaxIterations() {
-        return maxIterations;
-    }
-
-    public void print() {
-        System.out.println("This is the Jacobi algorithm.");
-        System.out.println("The original matrix is :");
-        a.print(10, 5);
+    public String toString() {
+        String buf = "";
+        buf += "Jacobi\n";
+        buf += "Original Matrix:\n";
+        buf += a.toString() + "\n";
         if (N < maxIterations) {
-            System.out.println("The final estimated x value is: ");
-            for (int i = 0; i < x.getRowDimension(); i++) {
-                for (int j = 0; j < x.getColumnDimension(); j++) {
-                    System.out.println(x.get(i, j));
-                }
-            }
-            System.out.println("The operation completed after " + N + " iterations.");
+            buf += "Final estimated x value: \n";
+            buf += x.toString();
+            buf += "The method completed after " + N + " iterations.\n";
         } else {
-            System.out.println("The operation failed after " + N + " iterations.");
-            System.out.println("The final estimated x value is: ");
-            for (int i = 0; i < x.getRowDimension(); i++) {
-                for (int j = 0; j < x.getColumnDimension(); j++) {
-                    System.out.println(x.get(i, j));
-                }
-            }
+            buf += "The method failed after " + N + " iterations.\n";
+            buf += "Final estimated x value: \n";
+            buf += x.toString();
         }
+        return buf;
     }
 
     public static void main(String[] args) {
@@ -163,8 +193,7 @@ public class jacobi_iter {
         Matrix a = new Matrix(test);
         Matrix b = new Matrix(testB);
         Matrix c = new Matrix(testGuess);
-        jacobi_iter testing = new jacobi_iter(a, c, 1.0/100000000.0);
-        testing.jacobi();
-        testing.print();
+        jacobi_iter testing = new jacobi_iter(a, c, .00001, 100);
+        System.out.println(testing.toString());
     }
 }

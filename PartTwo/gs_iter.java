@@ -8,19 +8,20 @@ public class gs_iter {
     private Matrix b; //stands for vector b
     private Matrix x0; //stands for the initial guess
     double tolerance;
-    int maxIterations = 100;
+    private int maxIterations;
     private int N;
 
-    public gs_iter(Matrix a, Matrix b, Matrix x0, double tolerance) {
+    public gs_iter(Matrix a, Matrix b, Matrix x0, double tolerance, int M) {
         this.a = a;
         this.b = b;
         this.x0 = x0;
         this.tolerance = tolerance;
+        this.maxIterations = M;
         iterate();
     }
 
     //if a is augmented
-    public gs_iter(Matrix a, Matrix x0, double tolerance) {
+    public gs_iter(Matrix a, Matrix x0, double tolerance, int M) {
         double temp[][] = new double[a.getRowDimension()][a.getColumnDimension() - 1];
         double tempB[][] = new double[a.getRowDimension()][1];
         for (int i = 0; i < a.getRowDimension(); i++) {
@@ -36,6 +37,7 @@ public class gs_iter {
         this.b = new Matrix(tempB);
         this.x0 = x0;
         this.tolerance = tolerance;
+        this.maxIterations = M;
         iterate();
     }
 
@@ -161,7 +163,7 @@ public class gs_iter {
         Matrix a = new Matrix(test);
         Matrix b = new Matrix(testB);
         Matrix c = new Matrix(testGuess);
-        gs_iter testing = new gs_iter(a, c,  .00005);
+        gs_iter testing = new gs_iter(a, c, .00005, 100);
         System.out.println(testing.toString());
     }
 }

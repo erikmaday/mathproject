@@ -1,5 +1,7 @@
 package base;
 
+import base.Matrix;
+
 /**
  * Linear Algebra Class that contains methods
  * for matrix * vector,
@@ -22,8 +24,8 @@ public class LinearAlgebra {
      * @return Vector product
      */
     public static Vector matrixVectorMultiply(Vector v, Matrix m) {
-        int mHeight = m.getHeight();
-        int mWidth = m.getWidth();
+        int mHeight = m.getRowDimension();
+        int mWidth = m.getColumnDimension();
         if (v.getSize() != mWidth) {
             //throw new RunTimeException("size does not match up.");
         }
@@ -44,9 +46,9 @@ public class LinearAlgebra {
      * @return Matrix sum
      */
     public static Matrix matrixAddition(Matrix m1, Matrix m2) {
-        int m1Height = m1.getHeight();
-        int m1Width = m2.getWidth();
-        if (m1Height != m2.getHeight() || m1Width != m2.getWidth()) {
+        int m1Height = m1.getRowDimension();
+        int m1Width = m2.getColumnDimension();
+        if (m1Height != m2.getRowDimension() || m1Width != m2.getColumnDimension()) {
             //TODO
             //throw size mismatch error
         }
@@ -65,8 +67,8 @@ public class LinearAlgebra {
         }
         //TODO
         //Throw size mismatch error
-        double[][] a = B.toArray();
-        double[][] m = A.toArray();
+        double[][] a = B.getArray();
+        double[][] m = A.getArray();
         double[][] sub = new double[m.length][m[0].length];
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m[0].length; j++) {
@@ -82,7 +84,7 @@ public class LinearAlgebra {
      * @param B the second matrix
      * @return A * B
      */
-    public static double[][] multiplyMatrix(double[][] A, double[][] B) {
+    public static double[][] multiplyMatrix(final double[][] A, final double[][] B) {
         int mA = A.length;
         int nA = A[0].length;
         int mB = B.length;
@@ -108,10 +110,10 @@ public class LinearAlgebra {
      * @return A * B
      */
     public double[][] multiplyMatrix2(Matrix A, Matrix B) {
-        int mA = A.toArray().length;
-        int nA = A.toArray()[0].length;
-        int mB = B.toArray().length;
-        int nB = B.toArray()[0].length;
+        int mA = A.getArray().length;
+        int nA = A.getArray()[0].length;
+        int mB = B.getArray().length;
+        int nB = B.getArray()[0].length;
         if (nA != mB) {
             throw new IllegalArgumentException("Incompatible sizes.");
         }
@@ -119,7 +121,7 @@ public class LinearAlgebra {
         for (int i = 0; i < mA; i++) {
             for (int j = 0; j < nB; j++) {
                 for (int k = 0; k < nA; k++) {
-                    C[i][j] += A.toArray()[i][k] * B.toArray()[k][j];
+                    C[i][j] += A.getArray()[i][k] * B.getArray()[k][j];
                 }
             }
         }
@@ -232,7 +234,7 @@ public class LinearAlgebra {
      * @return U * U^T
      */
     public static Matrix transposeMultiply(Matrix matrix, Vector vector) {
-        double[][] matrixArr = matrix.toArray();
+        double[][] matrixArr = matrix.getArray();
         double[][] ret = new double[matrixArr[0].length][vector.getSize()];
         for (int i = 0; i < matrixArr.length; i++) {
             for (int j = 0; j < vector.getSize(); j++) {
@@ -288,7 +290,7 @@ public class LinearAlgebra {
 
     public static double norm(Matrix m) {
         double max = 0;
-        double[][] matrix = m.toArray();
+        double[][] matrix = m.getArray();
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 if (Math.abs(matrix[i][j]) > max) {
@@ -324,7 +326,7 @@ public class LinearAlgebra {
      * @return the determinant of the matrix
      */
     public static double determinant(Matrix matrix, int n) {
-        double[][] m = matrix.toArray();
+        double[][] m = matrix.getArray();
         if (n != m[0].length) {
             //throw size exception
         }
@@ -360,12 +362,12 @@ public class LinearAlgebra {
     }
 
     public static Matrix augment(Matrix main, Vector vec) {
-        Matrix augmented = new Matrix(new double[main.getHeight()][main.getWidth() + 1]);
-        for (int r = 0; r < main.getHeight(); r++) {
-            for (int c = 0; c < main.getWidth(); c++) {
+        Matrix augmented = new Matrix(new double[main.getRowDimension()][main.getColumnDimension() + 1]);
+        for (int r = 0; r < main.getRowDimension(); r++) {
+            for (int c = 0; c < main.getColumnDimension(); c++) {
                 augmented.set(r, c, main.get(r, c));
             }
-            augmented.set(r, main.getWidth(), vec.get(r));
+            augmented.set(r, main.getColumnDimension(), vec.get(r));
         }
         return augmented;
     }
@@ -378,7 +380,7 @@ public class LinearAlgebra {
     public static double trace(Matrix m) {
         double tr = 0;
         double val = 0;
-        for (int x = m.getHeight() - 1; x > 0; x--) {
+        for (int x = m.getRowDimension() - 1; x > 0; x--) {
             val = m.get(x, x);
             tr += val;
         }

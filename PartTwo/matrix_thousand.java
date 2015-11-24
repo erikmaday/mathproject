@@ -1,4 +1,4 @@
-package PowerMethods;
+package PartTwo;
 
 import java.util.ArrayList;
 

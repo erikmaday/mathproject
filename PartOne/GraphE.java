@@ -1,4 +1,4 @@
-import SymmetricPascal.solve_px_b;
+package PartOne;
 
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -7,13 +7,8 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.scene.paint.Color;
-
-
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * Created by Erik on 11/21/2015.
@@ -30,7 +25,7 @@ public class GraphE extends Application {
 
         stage.setTitle("Pascal Matrix");
         final NumberAxis xAxis = new NumberAxis(0, 12, 1);
-        final NumberAxis yAxis = new NumberAxis(0, 1000, 1);
+        final NumberAxis yAxis = new NumberAxis(0, 1, 1);
         final ScatterChart<Number, Number> sc = new ScatterChart<Number, Number>(xAxis, yAxis);
 
         xAxis.setLabel("n");

@@ -1,8 +1,8 @@
-package SymmetricPascal;
+package PartOne;
 
-import base.LinearAlgebra;
-import base.Matrix;
 import base.Vector;
+import base.Matrix;
+import java.util.Arrays;
 
 /**
  * Created by erikmaday on 11/22/15.
@@ -17,11 +17,9 @@ public class solve_px_b {
         pascal p = new pascal(n);
         Matrix P = p.getPascalMatrix();
         Vector B = p.getPascalVector();
-        System.out.println("P\n" + P.toString());
-        lu_fact luFactor = new lu_fact(P.copy());
-        System.out.println("P\n" + P.toString());
-        System.out.println("L\n" + luFactor.getL().toString());
-        System.out.println("U\n" + luFactor.getU().toString());
+        System.out.print("P: \n" + Arrays.deepToString(P.getArrayCopy()) + "\n\n");
+        lu_fact luFactor = new lu_fact(new Matrix(P.getArrayCopy()));
+        System.out.print("P: \n" + Arrays.deepToString(P.getArrayCopy()) + "\n\n");
 
 //        pascal p = new pascal(n);
 //        Matrix P = p.getPascalMatrix();

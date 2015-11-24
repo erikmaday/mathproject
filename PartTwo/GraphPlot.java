@@ -1,5 +1,4 @@
-import PowerMethods.matrix_thousand;
-import PowerMethods.PowerMatrix;
+package PartTwo;
 
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -11,7 +10,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.paint.Color;
-
 
 import java.util.ArrayList;
 import java.util.Random;

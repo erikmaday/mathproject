@@ -1,8 +1,8 @@
-package SymmetricPascal;
+package PartOne;
 
-import base.Matrix;
 import base.Vector;
 
+import base.Matrix;
 /**
  * Created by erikmaday on 11/22/15.
  */

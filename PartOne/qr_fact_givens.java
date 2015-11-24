@@ -1,8 +1,8 @@
-package SymmetricPascal;
+package PartOne;
 
 import base.LinearAlgebra;
-import base.Matrix;
 import java.util.Stack;
+import base.Matrix;
 
 /**
  * @author Erik Maday, CG Carson, Quinton Johnson

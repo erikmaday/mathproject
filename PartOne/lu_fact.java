@@ -1,14 +1,14 @@
-package SymmetricPascal;
+package PartOne;
 
-import base.Matrix;
 import base.LinearAlgebra;
+import base.Matrix;
 import java.util.LinkedList;
 
 /**
  * @author Erik Maday, CG Carson, Quinton Johnson
  * @version 1.0
  */
-public class lu_fact_saved {
+public class lu_fact {
 
     private Matrix A;
     private Matrix U;
@@ -19,13 +19,13 @@ public class lu_fact_saved {
      * Constructor, calculates the LU factorization for the given matrix
      * @param q the input matrix
      */
-    public lu_fact_saved(Matrix q) {
+    public lu_fact(Matrix q) {
         this.A = q;
         int n;
-        n = A.getHeight();
+        n = A.getRowDimension();
 
         LinkedList<Matrix> matrixList = new LinkedList<>();
-        double [][]upper = A.toArray();
+        double [][]upper = A.getArray();
         double [][]identity = new double[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -76,14 +76,14 @@ public class lu_fact_saved {
                     }
                 }
             }
-            this.L = new Matrix(LinearAlgebra.multiplyMatrix(L.toArray(),
-                    lMatrix.toArray()));
+            this.L = new Matrix(LinearAlgebra.multiplyMatrix(L.getArray(),
+                    lMatrix.getArray()));
         }
         this.U = new Matrix(upper);
 
         // Calculate Error
         Matrix luTimes = new
-                Matrix(LinearAlgebra.multiplyMatrix(L.toArray(), U.toArray()));
+                Matrix(LinearAlgebra.multiplyMatrix(L.getArray(), U.getArray()));
         Matrix luMinusA = LinearAlgebra.matrixSubtraction(luTimes, A);
         double error = LinearAlgebra.norm(luMinusA);
         this.error = error;

@@ -1,4 +1,4 @@
-package SymmetricPascal;
+package PartOne;
 
 import base.LinearAlgebra;
 import base.Matrix;
@@ -21,9 +21,9 @@ public class qr_fact_househ {
      */
     public qr_fact_househ(Matrix A) {
 
-        QR = A.toArray();
-        m = A.getHeight();
-        n = A.getWidth();
+        QR = A.getArray();
+        m = A.getRowDimension();
+        n = A.getColumnDimension();
         rightDiagonal = new double[n];
 
         for (int k = 0; k < n; k++) {
@@ -66,7 +66,7 @@ public class qr_fact_househ {
      */
     public double[][] getQ () {
         Matrix X = new Matrix(m,n);
-        double[][] Q = X.toArray();
+        double[][] Q = X.getArray();
         for (int k = n-1; k >= 0; k--) {
             for (int i = 0; i < m; i++) {
                 Q[i][k] = 0.0;
@@ -94,7 +94,7 @@ public class qr_fact_househ {
      */
     public double[][] getR () {
         Matrix X = new Matrix(n,n);
-        double[][] R = X.toArray();
+        double[][] R = X.getArray();
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (i < j) {

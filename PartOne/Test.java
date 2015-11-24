@@ -1,7 +1,7 @@
-package SymmetricPascal;
+package PartOne;
 
-import base.Matrix;
 import base.Vector;
+import base.Matrix;
 
 /**
  * @author Erik Maday, CG Carson, Quinton Johnson
@@ -20,8 +20,8 @@ public class Test {
 
         // Test LU
         lu_fact luFact = new lu_fact(new Matrix(exampleMatrix));
-        Matrix lMatrix = new Matrix(formatArray(luFact.getL().toArray()));
-        Matrix uMatrix = new Matrix(formatArray(luFact.getU().toArray()));
+        Matrix lMatrix = new Matrix(formatArray(luFact.getL().getArray()));
+        Matrix uMatrix = new Matrix(formatArray(luFact.getU().getArray()));
         System.out.println("L for LU: \n" + lMatrix.toString());
         System.out.println("U for LU: \n" + uMatrix.toString());
 //        System.out.println("Error for LU: " + luFact.getError() + "\n");
@@ -66,10 +66,6 @@ public class Test {
         double[] f = {7, 4, -10};
         solve_qr_b solu = new solve_qr_b(new Matrix(z), new Vector(f));
         System.out.println(solu.getX().toString());
-
-        // Test Pascal Matrix
-        pascal p = new pascal(5);
-        System.out.println(p.getPascalMatrix().toString());
     }
 
     public static double[][] formatArray(double[][] array) {

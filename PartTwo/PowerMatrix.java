@@ -1,8 +1,8 @@
-package PowerMethods;
+package PartTwo;
 
 import base.LinearAlgebra;
-import base.Matrix;
 import java.util.Random;
+import base.Matrix;
 
 public class PowerMatrix {
     private Matrix A;
@@ -25,9 +25,9 @@ public class PowerMatrix {
         tempMatrix[1][1] = randomNumber();
         this.A = new Matrix(tempMatrix);
         this.inverse = inverse();
-        this.determinant = LinearAlgebra.determinant(A, A.getWidth());
+        this.determinant = LinearAlgebra.determinant(A, A.getColumnDimension());
         this.trace = LinearAlgebra.trace(A);
-        this.inverseDeterminant = LinearAlgebra.determinant(this.inverse, this.inverse.getWidth());
+        this.inverseDeterminant = LinearAlgebra.determinant(this.inverse, this.inverse.getColumnDimension());
         this.inverseTrace = LinearAlgebra.trace(this.inverse);
         generateAnswers();
     }
@@ -39,7 +39,7 @@ public class PowerMatrix {
     }
 
     private Matrix inverse() {
-        double[][] arr = A.toArray();
+        double[][] arr = A.getArray();
         double denominator = arr[0][0] * arr[1][1] - arr[1][0] * arr[0][1];
         double temp = arr[0][0];
         arr[0][0] = arr[1][1] / denominator;
@@ -51,8 +51,8 @@ public class PowerMatrix {
 
     private void generateAnswers() {
         double[] initial = {1.0, 0};
-        power_method l = new power_method(A.toArray(), initial, .00005, 100);
-        power_method s = new power_method(inverse.toArray(), initial, .00005, 100);
+        power_method l = new power_method(A.getArray(), initial, .00005, 100);
+        power_method s = new power_method(inverse.getArray(), initial, .00005, 100);
         largest = l.getValues();
         smallest = s.getValues();
     }

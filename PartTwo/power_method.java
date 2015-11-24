@@ -1,4 +1,4 @@
-package PowerMethods;
+package PartTwo;
 
 import base.*;
 

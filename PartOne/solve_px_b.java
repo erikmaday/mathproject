@@ -59,8 +59,8 @@ public class solve_px_b {
             System.out.println("N = " + n + ":");
             System.out.println("\t|LU-P| = " + temp.getLUError());
             System.out.println("\t|PX-B| = " + temp.getPXBError());
-            System.out.println("\t|QR-P| G = " + temp.getPXBError());
-            System.out.println("\t|QR-P| H = " + temp.getPXBError());
+            System.out.println("\t|QR-P| G = " + temp.getGivensError());
+            System.out.println("\t|QR-P| H = " + temp.getHouseholderError());
         }
     }
 }

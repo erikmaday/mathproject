@@ -4,7 +4,10 @@ import base.LinearAlgebra;
 import base.Vector;
 import base.Matrix;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/master
 import java.util.Arrays;
 >>>>>>> origin/master
 

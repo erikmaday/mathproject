@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package PartThree;
 
 import java.io.BufferedReader;
@@ -18,6 +19,8 @@ public class gs_iter
 
 {
 =======
+=======
+>>>>>>> origin/master
 //package PartThree;
 //
 //import java.io.BufferedReader;
@@ -36,6 +39,9 @@ public class gs_iter
 //public class gs_iter
 //
 //{
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 //    private double[][] A = {{1.0, 1.0/2, 1.0/3},{1.0/2, 1.0/3, 1.0/4},{1.0/3, 1.0/4, 1.0/5}};
 //    private int maxIterations;
@@ -225,7 +231,11 @@ public class gs_iter
 //        gausSeidel.solve();
 //    }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
+=======
+//}
+>>>>>>> origin/master
 =======
 //}
 >>>>>>> origin/master

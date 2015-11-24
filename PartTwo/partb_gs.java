@@ -8,24 +8,24 @@ import java.util.Random;
 /**
  * Created by erikmaday on 11/24/15.
  */
-public class partb_jacobi {
-    private ArrayList<jacobi_iter> j;
+public class partb_gs {
+    private ArrayList<gs_iter> g;
     private double[][] matrix = {{1, 1/2.0, 1/3.0}, {1/2.0, 1/3.0, 1/4.0}, {1/3.0, 1/4.0, 1/5.0}};
     private final Matrix A = new Matrix(matrix);
     private Matrix B;
 
-    public partb_jacobi(int numMatrices) {
-        j = new ArrayList<jacobi_iter>();
+    public partb_gs(int numMatrices) {
+        g = new ArrayList<gs_iter>();
         for (int i = 0; i <= numMatrices; i++) {
-            j.add(genRandom());
+            g.add(genRandom());
         }
     }
 
-    public ArrayList<jacobi_iter> getList() {
-        return j;
+    public ArrayList<gs_iter> getList() {
+        return g;
     }
 
-    public jacobi_iter genRandom() {
+    public gs_iter genRandom() {
         double[][] A = new double[3][3];
         A[0][0] = 1.0;
         A[0][1] = 1.0/2.0;
@@ -47,16 +47,11 @@ public class partb_jacobi {
         guess[0][0] = -10 + (10 - (-10)) * r1.nextDouble();
         guess[1][0] = -10 + (10 - (-10)) * r2.nextDouble();
         guess[2][0] = -10 + (10 - (-10)) * r3.nextDouble();
-        Matrix a = new Matrix(A);
-        Matrix b = new Matrix(randB);
-        Matrix x0 = new Matrix(guess);
-        return new jacobi_iter(a, b, x0, .00005, 100);
+        return new gs_iter(new Matrix(A), new Matrix(randB), new Matrix(guess), .00005, 100);
     }
 
+
+
     public static void main(String[] args) {
-        partb_jacobi test = new partb_jacobi(100);
-        for (jacobi_iter e : test.getList()) {
-            System.out.println(e.toString());
-        }
     }
 }

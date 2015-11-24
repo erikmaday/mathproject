@@ -121,32 +121,6 @@ public class jacobi_iter {
         return -1;
     }
 
-    public static jacobi_iter genRandom() {
-        double[][] A = new double[3][4];
-        A[0][0] = 1.0;
-        A[0][1] = 1.0/2.0;
-        A[0][2] = 1.0/3.0;
-        A[1][0] = 1.0/2.0;
-        A[1][1] = 1.0/3.0;
-        A[1][2] = 1.0/4.0;
-        A[2][0] = 1.0/3.0;
-        A[2][1] = 1.0/4.0;
-        A[2][2] = 1.0/5.0;
-        A[0][3] = .1;
-        A[1][3] = .1;
-        A[2][3] = .1;
-        double[][] guess = new double[3][1];
-        guess[0][0] = randomNumber();
-        guess[1][0] = randomNumber();
-        guess[2][0] = randomNumber();
-        return new jacobi_iter(new Matrix(A), new Matrix(guess), .00005, 100);
-    }
-
-    private static double randomNumber() {
-        Random r = new Random();
-        return -10 + (10 - (-10)) * r.nextDouble();
-    }
-
     public Matrix getB() {
         return b;
     }
@@ -174,26 +148,5 @@ public class jacobi_iter {
             buf += x.toString();
         }
         return buf;
-    }
-
-    public static void main(String[] args) {
-        double [][]test = new double[2][3];
-        test[0][0] = 4;
-        test[0][1] = 2;
-        test[1][0] = 3;
-        test[1][1] = 5;
-        test[0][2] = 1;
-        test[1][2] = 2;
-        double [][]testB = new double[2][1];
-        testB[0][0] = 1;
-        testB[1][0] = 2;
-        double [][]testGuess = new double[2][1];
-        testGuess[0][0] = 0;
-        testGuess[1][0] = 0;
-        Matrix a = new Matrix(test);
-        Matrix b = new Matrix(testB);
-        Matrix c = new Matrix(testGuess);
-        jacobi_iter testing = new jacobi_iter(a, c, .00001, 100);
-        System.out.println(testing.toString());
     }
 }

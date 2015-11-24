@@ -2,6 +2,8 @@ package PartTwo;
 
 import base.Matrix;
 
+import java.util.Random;
+
 public class gs_iter {
     Matrix a;
     Matrix x = null; //really a vector solution in the iteration
@@ -108,7 +110,7 @@ public class gs_iter {
     }
 
     private static Matrix lowerTriangularForwardSubstitution(Matrix matrixA, Matrix matrixB) {
-        double [][] a = matrixA.getArrayCopy();
+        double[][] a = matrixA.getArrayCopy();
         double[][] b = matrixB.getArrayCopy();
         double[][] x = new double[matrixA.getRowDimension()][1];
         for (int j = 0; j < matrixA.getRowDimension(); j++) {

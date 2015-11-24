@@ -109,6 +109,10 @@ public class qr_fact_househ {
         return R;
     }
 
+    public Matrix getQR() {
+        return new Matrix(QR);
+    }
+
     /**
      * Returns the error
      * @return the error

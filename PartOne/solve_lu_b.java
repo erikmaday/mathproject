@@ -21,7 +21,7 @@ public class solve_lu_b {
         lu_fact fact = new lu_fact(m);
         Matrix L = fact.getL();
         Matrix U = fact.getU();
-        this.LU = new Matrix(LinearAlgebra.multiplyMatrix(L.getArray(), U.getArray()));
+        this.LU = L.times(U);
         Matrix LB = LinearAlgebra.augment(L, B);
 
         solve_ax_b LYB = new solve_ax_b(LB);

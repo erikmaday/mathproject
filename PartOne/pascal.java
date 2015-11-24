@@ -1,8 +1,8 @@
 package PartOne;
 
 import base.Vector;
-
 import base.Matrix;
+
 /**
  * @author Erik Maday, CG Carson, Quinton Johnson
  * @version 1.0

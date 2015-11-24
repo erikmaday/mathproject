@@ -44,14 +44,18 @@ public class partb_gs {
         Random r2 = new Random();
         Random r3 = new Random();
         double[][] guess = new double[3][1];
-        guess[0][0] = -10 + (10 - (-10)) * r1.nextDouble();
-        guess[1][0] = -10 + (10 - (-10)) * r2.nextDouble();
-        guess[2][0] = -10 + (10 - (-10)) * r3.nextDouble();
-        return new gs_iter(new Matrix(A), new Matrix(randB), new Matrix(guess), .00005, 100);
+        guess[0][0] = -1 + (10 - (-10)) * r1.nextDouble();
+        guess[1][0] = -1 + (10 - (-10)) * r2.nextDouble();
+        guess[2][0] = -1 + (10 - (-10)) * r3.nextDouble();
+        return new gs_iter(new Matrix(A), new Matrix(randB), new Matrix(guess), .00005, 500);
     }
 
 
 
     public static void main(String[] args) {
+        partb_gs test = new partb_gs(100);
+        for (gs_iter e : test.getList()) {
+            System.out.println(e.toString());
+        }
     }
 }

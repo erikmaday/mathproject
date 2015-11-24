@@ -112,4 +112,13 @@ public class lu_fact {
     public double getError() {
         return error;
     }
+
+    public String toString() {
+        String buf = "";
+        buf += "Original Matrix:\n" + A.toString() + "\n";
+        buf += "L:\n" + L.toString() + "\n";
+        buf += "U:\n" + U.toString() + "\n";
+        buf += "Error:\n" + error + "\n";
+        return buf;
+    }
 }

@@ -2,8 +2,6 @@ package PartTwo;
 
 import base.Matrix;
 
-import java.util.Random;
-
 public class gs_iter {
     Matrix a;
     Matrix x = null; //really a vector solution in the iteration
@@ -24,19 +22,19 @@ public class gs_iter {
 
     //if a is augmented
     public gs_iter(Matrix a, Matrix x0, double tolerance, int M) {
-        double temp[][] = new double[a.getRowDimension()][a.getColumnDimension() - 1];
-        double tempB[][] = new double[a.getRowDimension()][1];
+        double A[][] = new double[a.getRowDimension()][a.getColumnDimension() - 1];
+        double B[][] = new double[a.getRowDimension()][1];
         for (int i = 0; i < a.getRowDimension(); i++) {
             for (int j = 0; j < a.getColumnDimension(); j++) {
                 if (j >= a.getColumnDimension() - 1) {
-                    tempB[i][0] = a.get(i, j);
+                    B[i][0] = a.get(i, j);
                 } else {
-                    temp[i][j] = a.get(i, j);
+                    A[i][j] = a.get(i, j);
                 }
             }
         }
-        this.a = new Matrix(temp);
-        this.b = new Matrix(tempB);
+        this.a = new Matrix(A);
+        this.b = new Matrix(B);
         this.x0 = x0;
         this.tolerance = tolerance;
         this.maxIterations = M;

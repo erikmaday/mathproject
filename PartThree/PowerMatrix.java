@@ -30,9 +30,10 @@ public class PowerMatrix {
         this.A = new Matrix(tempMatrix);
         this.inverse = inverse();
         this.determinant = LinearAlgebra.determinant(A, A.getColumnDimension());
-        this.trace = LinearAlgebra.trace(A);
-        this.inverseDeterminant = LinearAlgebra.determinant(this.inverse, this.inverse.getColumnDimension());
-        this.inverseTrace = LinearAlgebra.trace(this.inverse);
+        this.trace = A.trace();
+        this.inverseDeterminant = LinearAlgebra.determinant(this.inverse,
+                this.inverse.getColumnDimension());
+        this.inverseTrace = this.inverse.trace();
         generateAnswers();
     }
 

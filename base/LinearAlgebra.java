@@ -355,7 +355,7 @@ public class LinearAlgebra {
                     }
                 }
                 det = det + m[0][x] * determinant(new Matrix(m2), n - 1) * sign;
-                sign *= -1;
+                sign = -sign;
             }
         }
         return det;

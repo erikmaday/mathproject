@@ -40,6 +40,8 @@ public class GraphPlot extends Application {
                 ScatterChart<Number, Number>(xAxis2, yAxis2);
         xAxis.setLabel("Determinant");
         yAxis.setLabel("Trace");
+        xAxis2.setLabel("Determinant");
+        yAxis2.setLabel("Trace");
         sc.setTitle("Matrix Data");
 
         XYChart.Series series1 = new XYChart.Series();

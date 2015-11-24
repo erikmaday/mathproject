@@ -24,7 +24,7 @@ public class Test {
         Matrix uMatrix = new Matrix(formatArray(luFact.getU().getArray()));
         System.out.println("L for LU: \n" + lMatrix.toString());
         System.out.println("U for LU: \n" + uMatrix.toString());
-//        System.out.println("Error for LU: " + luFact.getError() + "\n");
+        System.out.println("Error for LU: " + luFact.getError() + "\n");
 
         // Test Givens
         qr_fact_givens givensRotations = new qr_fact_givens(exampleMatrix);

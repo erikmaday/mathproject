@@ -26,7 +26,7 @@ public class GraphE extends Application {
 
         stage.setTitle("Pascal Matrix");
         final NumberAxis xAxis = new NumberAxis(0, 12, 1);
-        final NumberAxis yAxis = new NumberAxis(0, 1, 1);
+        final NumberAxis yAxis = new NumberAxis(0, 1000, 1);
         final ScatterChart<Number, Number> sc = new ScatterChart<Number, Number>(xAxis, yAxis);
 
         xAxis.setLabel("n");

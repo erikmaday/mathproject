@@ -1,7 +1,10 @@
 package PartOne;
 
+import base.LinearAlgebra;
 import base.Vector;
 import base.Matrix;
+
+import javax.sound.sampled.Line;
 import java.util.Arrays;
 
 /**
@@ -18,28 +21,27 @@ public class solve_px_b {
         pascal p = new pascal(n);
         Matrix P = p.getPascalMatrix();
         Vector B = p.getPascalVector();
-        System.out.print("P: \n" + Arrays.deepToString(P.getArrayCopy()) + "\n\n");
+        System.out.print("P: \n" + Arrays.deepToString(P.getArrayCopy())
+                + "\n\n");
         lu_fact luFactor = new lu_fact(new Matrix(P.getArrayCopy()));
-        System.out.print("P: \n" + Arrays.deepToString(P.getArrayCopy()) + "\n\n");
-
-//        pascal p = new pascal(n);
-//        Matrix P = p.getPascalMatrix();
-//        Vector B = p.getPascalVector();
-//        System.out.println("P\n" + P.toString());
-//        solve_lu_b lup = new solve_lu_b(new Matrix(P.toArray()), B);
-//        lu_fact luFactor = new lu_fact(P);
-//        Matrix LU = luFactor.getL();
-//        System.out.println("LU\n" + LU.toString());
-//        System.out.println("P\n" + P.toString());
-//        Matrix LUDiff = LinearAlgebra.matrixSubtraction(LU, P);
-//        LUError = LinearAlgebra.norm(LinearAlgebra.matrixSubtraction(new Matrix(LU.toArray()), new Matrix(P.toArray())));
-//        System.out.println("LU\n" + LU.toString());
-//        System.out.println("P\n" + P.toString());
-//        System.out.println(LUError);
-//        solve_ax_b pxb = new solve_ax_b(LinearAlgebra.augment(new Matrix(P.toArray()), new Vector(B.toArray())));
-//        x = pxb.getAnswer();
-//        Vector px = LinearAlgebra.matrixVectorMultiply(new Vector (x.toArray()), new Matrix(P.toArray()));
-//        PXBError = LinearAlgebra.magnitude(LinearAlgebra.vectorSubtract(px, B));
+        System.out.print("P: \n" + Arrays.deepToString(P.getArrayCopy())
+                + "\n\n");
+        Matrix LU = luFactor.getL();
+        System.out.println("LU\n" + Arrays.deepToString(LU.getArrayCopy())
+                + "\n\n");
+        Matrix LUDiff = LinearAlgebra.matrixSubtraction(LU, P);
+        LUError = LinearAlgebra.norm((LU.minus(P)));
+        System.out.println("LU\n" + Arrays.deepToString(LU.getArrayCopy())
+                + "\n\n");
+        System.out.print("P: \n" + Arrays.deepToString(P.getArrayCopy())
+                + "\n\n");
+        System.out.println(LUError);
+        solve_ax_b pxb = new solve_ax_b(LinearAlgebra.augment(new
+                Matrix(P.getArray()), new Vector(B.toArray())));
+        x = pxb.getAnswer();
+        Vector px = LinearAlgebra.matrixVectorMultiply(new
+                Vector (x.toArray()), new Matrix(P.getArray()));
+        PXBError = LinearAlgebra.magnitude(LinearAlgebra.vectorSubtract(px, B));
     }
 
     public double getLUError() {

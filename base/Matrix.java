@@ -900,6 +900,17 @@ public class Matrix implements Cloneable, java.io.Serializable {
         return new Matrix(A);
     }
 
+    public String toString() {
+        String buf = "";
+        for (int r = 0; r < m; r++) {
+            for (int c = 0; c < n; c++) {
+                buf += A[r][c] + "\t";
+            }
+            buf += "\n";
+        }
+        return buf;
+    }
+
 
 /* ------------------------
    Private Methods

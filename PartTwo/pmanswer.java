@@ -3,7 +3,8 @@ package PartTwo;
 import base.Vector;
 
 /**
- * Created by erikmaday on 11/20/15.
+ * @author Erik Maday, CG Carson, Quinton Johnson
+ * @version 1.0
  */
 public class pmanswer {
 

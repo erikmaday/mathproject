@@ -5,7 +5,8 @@ import base.Matrix;
 import java.util.Arrays;
 
 /**
- * Created by erikmaday on 11/22/15.
+ * @author Erik Maday, CG Carson, Quinton Johnson
+ * @version 1.0
  */
 public class solve_px_b {
 
@@ -13,7 +14,7 @@ public class solve_px_b {
     private double PXBError;
     private Vector x;
 
-    public solve_px_b (int n) {
+    public solve_px_b(int n) {
         pascal p = new pascal(n);
         Matrix P = p.getPascalMatrix();
         Vector B = p.getPascalVector();

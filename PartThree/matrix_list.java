@@ -1,7 +1,8 @@
 package PartThree;
 
 /**
- * Created by CG Carson
+ * @author Erik Maday, CG Carson, Quinton Johnson
+ * @version 1.0
  */
 public class matrix_list {
 

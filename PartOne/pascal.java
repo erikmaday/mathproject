@@ -4,7 +4,8 @@ import base.Vector;
 
 import base.Matrix;
 /**
- * Created by erikmaday on 11/22/15.
+ * @author Erik Maday, CG Carson, Quinton Johnson
+ * @version 1.0
  */
 public class pascal {
 

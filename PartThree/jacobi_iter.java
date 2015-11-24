@@ -4,6 +4,11 @@ import java.io.*;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+
+/**
+ * @author Erik Maday, CG Carson, Quinton Johnson
+ * @version 1.0
+ */
 public class jacobi_iter {
 
     public static final int MAX_ITERATIONS = 100;

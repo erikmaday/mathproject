@@ -14,8 +14,10 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.Random;
 
+
 /**
- * Created by Erik on 11/21/2015.
+ * @author Erik Maday, CG Carson, Quinton Johnson
+ * @version 1.0
  */
 public class GraphPlot extends Application {
 

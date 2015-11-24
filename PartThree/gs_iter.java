@@ -7,6 +7,11 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+
+/**
+ * @author Erik Maday, CG Carson, Quinton Johnson
+ * @version 1.0
+ */
 public class gs_iter 
 
 {

@@ -12,23 +12,55 @@ import java.util.StringTokenizer;
  * @author Erik Maday, CG Carson, Quinton Johnson
  * @version 1.0
  */
-public class gs_iter 
+
+public class gs_iter
 
 {
-    public static final int MAX_ITERATIONS = 100;  
-    private double[][] M;
+    private double[][] A = {{1.0, 1.0/2, 1.0/3},{1.0/2, 1.0/3, 1.0/4},{1.0/3, 1.0/4, 1.0/5}};
+    private int maxIterations;
+    private double tolerance;
+    private double[] v;
 
-    public gs_iter(double [][] matrix) { M = matrix; }
+    public gs_iter(double[] vector, double tolerance, int iterations) {
+        v = vector;
+        this.tolerance = tolerance;
+        this.maxIterations = iterations;
+    }
 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ////////////////////////////////////////
     public void print()
     {
 
-        int n = M.length;
+        int n = m.length;
 
-        for (int i = 0; i < n; i++) 
+        for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n + 1; j++)
-                System.out.print(M[i][j] + " ");
+                System.out.print(m[i][j] + " ");
             System.out.println();
         }
     }
@@ -36,32 +68,32 @@ public class gs_iter
     public boolean transformToDominant(int r, boolean[] V, int[] R)
     {
 
-        int n = M.length;
+        int n = m.length;
 
-        if (r == M.length) 
+        if (r == m.length)
         {
             double[][] T = new double[n][n+1];
 
-            for (int i = 0; i < R.length; i++) 
+            for (int i = 0; i < R.length; i++)
             {
                 for (int j = 0; j < n + 1; j++)
-                    T[i][j] = M[R[i]][j];
+                    T[i][j] = m[R[i]][j];
             }
 
-            M = T;
+            m = T;
             return true;
         }
 
-        for (int i = 0; i < n; i++) 
+        for (int i = 0; i < n; i++)
         {
 
             if (V[i]) continue;
             double sum = 0;
 
             for (int j = 0; j < n; j++)
-                sum += Math.abs(M[i][j]);
+                sum += Math.abs(m[i][j]);
 
-            if (2 * Math.abs(M[i][r]) > sum) 
+            if (2 * Math.abs(m[i][r]) > sum)
             { // diagonally dominant?
                 V[i] = true;
                 R[r] = i;
@@ -75,38 +107,38 @@ public class gs_iter
 
         return false;
     }
- 
+
     public boolean makeDominant()
     {
 
-        boolean[] visited = new boolean[M.length];
-        int[] rows = new int[M.length];
+        boolean[] visited = new boolean[m.length];
+        int[] rows = new int[m.length];
         Arrays.fill(visited, false);
 
         return transformToDominant(0, visited, rows);
     }
- 
+
     public void solve()
     {
         int iterations = 0;
-        int n = M.length;
+        int n = m.length;
         double epsilon = 1e-15;
         double[] X = new double[n]; // Approximations
         double[] P = new double[n]; // Prev
         Arrays.fill(X, 0);
 
-        while (true) 
+        while (true)
         {
-            for (int i = 0; i < n; i++) 
+            for (int i = 0; i < n; i++)
             {
-                double sum = M[i][n]; // b_n
+                double sum = m[i][n]; // b_n
 
                 for (int j = 0; j < n; j++)
 
                     if (j != i)
-                        sum -= M[i][j] * X[j];
-    
-                X[i] = 1/M[i][i] * sum;
+                        sum -= m[i][j] * X[j];
+
+                X[i] = 1/m[i][i] * sum;
             }
 
             System.out.print("X_" + iterations + " = {");
@@ -117,7 +149,7 @@ public class gs_iter
 
             iterations++;
 
-            if (iterations == 1) 
+            if (iterations == 1)
                 continue;
 
             boolean stop = true;
@@ -127,7 +159,7 @@ public class gs_iter
                 if (Math.abs(X[i] - P[i]) > epsilon)
                     stop = false;
 
-            if (stop || iterations == MAX_ITERATIONS) break;
+            if (stop || iterations == maxIterations) break;
 
             P = (double[])X.clone();
         }
@@ -148,7 +180,7 @@ public class gs_iter
         M = new double[n][n+1];
         System.out.println("Enter the augmented matrix:");
 
-        for (int i = 0; i < n; i++) 
+        for (int i = 0; i < n; i++)
 
         {
 
@@ -161,10 +193,10 @@ public class gs_iter
 
         gs_iter gausSeidel = new gs_iter(M);
 
-        if (!gausSeidel.makeDominant()) 
+        if (!gausSeidel.makeDominant())
         {
             writer.println("The system isn't diagonally dominant: " +
-                     "The method cannot guarantee convergence.");
+                    "The method cannot guarantee convergence.");
         }
 
         writer.println();

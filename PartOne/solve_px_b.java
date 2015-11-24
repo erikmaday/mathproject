@@ -3,6 +3,12 @@ package PartOne;
 import base.LinearAlgebra;
 import base.Vector;
 import base.Matrix;
+<<<<<<< HEAD
+=======
+
+import javax.sound.sampled.Line;
+import java.util.ArrayList;
+>>>>>>> origin/master
 import java.util.Arrays;
 
 /**
@@ -49,6 +55,11 @@ public class solve_px_b {
     }
 
     public static void main(String[] args) {
-        solve_px_b blah = new solve_px_b(5);
+        for (int n = 2; n <= 12; n++) {
+            solve_px_b temp = new solve_px_b(n));
+            System.out.println("N = " + n + ":");
+            System.out.println("\t|LU-P| = " + temp.getLUError());
+            System.out.println("\t|PX-B| = " + temp.getPXBError());
+        }
     }
 }

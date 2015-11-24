@@ -12,16 +12,22 @@ public class Part1Driver {
     public static void main(String[] args) {
         int function = 0;
         function = getFunctionOption();
+        double[][] exampleMatrix = new double[][]{
+                { 1, 1, 1, 1},
+                { 1, 2, 3, 4},
+                { 1, 3, 6, 10},
+                { 1, 4, 10, 20}
+        };
         //get Matrix A
-            Matrix A = new Matrix();
+        Matrix A = new Matrix(exampleMatrix);
         if (function >= 4) {
             //get vector b
         }
         switch (function) {
-            case 1: lu_fact o1 = lu_fact(A);
+            case 1: lu_fact o1 = new lu_fact(A);
                     System.out.println(o1.toString());
                     break;
-            case 2: qr_fact_givens o2 = new qr_fact_givens(A);
+            case 2: qr_fact_givens o2 = new qr_fact_givens(A.getArray());
                     break;
         }
     }

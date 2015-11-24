@@ -301,6 +301,17 @@ public class LinearAlgebra {
         return max;
     }
 
+    public static Matrix inverse(Matrix A) {
+        double[][] arr = A.getArray();
+        double denominator = arr[0][0] * arr[1][1] - arr[1][0] * arr[0][1];
+        double temp = arr[0][0];
+        arr[0][0] = arr[1][1] / denominator;
+        arr[1][1] = temp / denominator;
+        arr[0][1] *= -1 / denominator;
+        arr[1][0] *= -1 / denominator;
+        return new Matrix(arr);
+    }
+
     /**
      * Returns the norm of the vector
      * @return normalized vector

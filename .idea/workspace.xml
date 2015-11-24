@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8025d78-4a6a-47e4-bade-ba170a1ddc22" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SymmetricPascal/lu_fact.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PartOne/solve_px_b.java" afterPath="$PROJECT_DIR$/PartOne/solve_px_b.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PartThree/gs_iter.java" afterPath="$PROJECT_DIR$/PartThree/gs_iter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PartThree/gs_iter.java" afterPath="$PROJECT_DIR$/PartTwo/gs_iter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PartThree/jacobi_iter.java" afterPath="$PROJECT_DIR$/PartTwo/jacobi_iter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PartThree/matrix_list.java" afterPath="$PROJECT_DIR$/PartTwo/matrix_list.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PartTwo/GraphPlot.java" afterPath="$PROJECT_DIR$/PartThree/GraphPlot.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PartTwo/MatrixGroup.java" afterPath="$PROJECT_DIR$/PartThree/MatrixGroup.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PartTwo/PowerMatrix.java" afterPath="$PROJECT_DIR$/PartThree/PowerMatrix.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PartTwo/matrix_thousand.java" afterPath="$PROJECT_DIR$/PartThree/matrix_thousand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PartTwo/pmanswer.java" afterPath="$PROJECT_DIR$/PartThree/pmanswer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PartTwo/power_method.java" afterPath="$PROJECT_DIR$/PartThree/power_method.java" />
     </list>
     <ignored path="mathproject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,15 +36,15 @@
       <file leaf-file-name="solve_px_b.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PartOne/solve_px_b.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.10190217">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.46875">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="gs_iter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PartThree/gs_iter.java">
+        <entry file="file://$PROJECT_DIR$/PartTwo/gs_iter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="19" column="3" selection-start-line="0" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
@@ -131,7 +136,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PartOne" />
+              <option name="myItemId" value="PartTwo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -559,16 +564,16 @@
       <created>1448330026316</created>
       <option name="number" value="Default" />
       <updated>1448330026316</updated>
-      <workItem from="1448330028136" duration="83000" />
+      <workItem from="1448330028136" duration="151000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83000" />
+    <option name="totallyTimeSpent" value="151000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="82" y="46" width="1278" height="812" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -580,8 +585,9 @@
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960877" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960877" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -590,7 +596,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -608,7 +613,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PartThree/gs_iter.java">
+    <entry file="file://$PROJECT_DIR$/PartTwo/gs_iter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="3" selection-start-line="0" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
@@ -618,8 +623,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PartOne/solve_px_b.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10190217">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.46875">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding />
         </state>
       </provider>

@@ -26,7 +26,7 @@ public class Part1Driver {
             System.out.println("Seperate entries by a space, rows by an enter, end with a blank line.");
             A = input.readMatrix();
             if (function >= 4) {
-                System.out.println("Please enter your vector4.");
+                System.out.println("Please enter your vector.");
                 B = input.readVector();
             }
         } else {

@@ -20,12 +20,12 @@ public class lu_fact {
      * @param q the input matrix
      */
     public lu_fact(Matrix q) {
-        this.A = q;
+        this.A = new Matrix(q.getArrayCopy());
         int n;
         n = A.getRowDimension();
 
         LinkedList<Matrix> matrixList = new LinkedList<>();
-        double [][]upper = A.getArray();
+        double [][]upper = q.getArray();
         double [][]identity = new double[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -115,7 +115,6 @@ public class lu_fact {
 
     public String toString() {
         String buf = "";
-        buf += "Original Matrix:\n" + A.toString() + "\n";
         buf += "L:\n" + L.toString() + "\n";
         buf += "U:\n" + U.toString() + "\n";
         buf += "Error:\n" + error + "\n";

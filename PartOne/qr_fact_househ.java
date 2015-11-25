@@ -9,6 +9,7 @@ import base.Matrix;
  */
 public class qr_fact_househ {
 
+    private Matrix original;
     private double[][] QR;
     private int m;
     private int n;
@@ -20,7 +21,7 @@ public class qr_fact_househ {
      * @param A the input Matrix to calculate reflections for
      */
     public qr_fact_househ(Matrix A) {
-
+        original = new Matrix(A.getArrayCopy());
         QR = A.getArray();
         m = A.getRowDimension();
         n = A.getColumnDimension();
@@ -119,5 +120,13 @@ public class qr_fact_househ {
      */
     public double getError() {
         return error;
+    }
+
+    public String toString() {
+        String buf = "";
+        buf += "Q:\n" + new Matrix(getQ()).toString() + "\n";
+        buf += "R:\n" + new Matrix(getR()).toString() + "\n";
+        buf += "Error:\n" + error + "\n";
+        return buf;
     }
 }

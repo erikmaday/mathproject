@@ -53,14 +53,23 @@ public class solve_px_b {
         return x;
     }
 
-    public static void main(String[] args) {
-        for (int n = 2; n <= 12; n++) {
-            solve_px_b temp = new solve_px_b(n);
-            System.out.println("N = " + n + ":");
-            System.out.println("\t|LU-P| = " + temp.getLUError());
-            System.out.println("\t|PX-B| = " + temp.getPXBError());
-            System.out.println("\t|QR-P| G = " + temp.getGivensError());
-            System.out.println("\t|QR-P| H = " + temp.getHouseholderError());
-        }
+    public String toString() {
+        String buf = "";
+        buf += "\t|LU-P| = " + getLUError() + "\n";
+        buf += "\t|PX-B| = " + getPXBError() + "\n";
+        buf += "\t|QR-P| G = " + getGivensError() + "\n";
+        buf += "\t|QR-P| H = " + getHouseholderError() + "\n";
+        return buf;
     }
+//
+//    public static void main(String[] args) {
+//        for (int n = 2; n <= 12; n++) {
+//            solve_px_b temp = new solve_px_b(n);
+//            System.out.println("N = " + n + ":");
+//            System.out.println("\t|LU-P| = " + temp.getLUError());
+//            System.out.println("\t|PX-B| = " + temp.getPXBError());
+//            System.out.println("\t|QR-P| G = " + temp.getGivensError());
+//            System.out.println("\t|QR-P| H = " + temp.getHouseholderError());
+//        }
+//    }
 }

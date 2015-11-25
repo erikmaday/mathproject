@@ -10,6 +10,7 @@ import base.Matrix;
  */
 public class qr_fact_givens {
 
+    private Matrix A;
     private double[][] Q;
     private double[][] R;
     private double[][] QR;
@@ -48,6 +49,7 @@ public class qr_fact_givens {
      * @param matrix the given matrix
      */
     public qr_fact_givens(double[][] matrix) {
+        A = new Matrix(matrix);
         int height = matrix.length;
         double[][] diagonalMatrix = createDiagonal(height);
         Stack<double[][]> givensMatrices = new Stack<double[][]>();
@@ -148,5 +150,13 @@ public class qr_fact_givens {
      */
     public double getError() {
         return error;
+    }
+
+    public String toString() {
+        String buf = "";
+        buf += "Q:\n" + new Matrix(Q).toString() + "\n";
+        buf += "R:\n" + new Matrix(R).toString() + "\n";
+        buf += "Error:\n" + error + "\n";
+        return buf;
     }
 }

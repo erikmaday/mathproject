@@ -11,6 +11,7 @@ import base.Matrix;
 public class solve_lu_b {
 
     private Matrix LU;
+    private Vector b;
     private Vector x;
 
     /**
@@ -19,6 +20,7 @@ public class solve_lu_b {
      */
     public solve_lu_b(Matrix m, Vector B) {
         lu_fact fact = new lu_fact(m);
+        b = B;
         Matrix L = fact.getL();
         Matrix U = fact.getU();
         this.LU = L.times(U);
@@ -38,5 +40,13 @@ public class solve_lu_b {
 
     public Matrix getLU() {
         return LU;
+    }
+
+    public String toString() {
+        String buf = "";
+        buf += "LU:\n" + LU.toString() + "\n";
+        buf += "B:\n" + b.toString() + "\n\n";
+        buf += "Solution X:\n" + x.toString() + "\n";
+        return buf;
     }
 }

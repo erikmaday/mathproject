@@ -1,6 +1,5 @@
 package PartTwo;
 
-import PartThree.power_method;
 import base.LinearAlgebraScanner;
 import base.Matrix;
 import base.Vector;

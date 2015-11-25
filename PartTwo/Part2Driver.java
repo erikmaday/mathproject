@@ -40,5 +40,6 @@ public class Part2Driver {
         gs_iter g = new gs_iter(A, b, v, tolerance, maxIts);
         System.out.println(j.toString());
         System.out.println(g.toString());
+        System.out.print("");
     }
 }

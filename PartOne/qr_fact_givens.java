@@ -86,7 +86,7 @@ public class qr_fact_givens {
         this.Q = first;
 
         // Setting QR
-        this.QR = LinearAlgebra.multiplyMatrix(first, matrixR);
+        this.QR =  (new Matrix(Q)).times(new Matrix(matrixR)).getArray();
 
         //Calculate Error
         Matrix qTimesR = new Matrix(LinearAlgebra.multiplyMatrix(Q, R));

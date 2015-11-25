@@ -38,7 +38,7 @@ public class Part2Driver {
 
         jacobi_iter j = new jacobi_iter(A, b, v, tolerance, maxIts);
         gs_iter g = new gs_iter(A, b, v, tolerance, maxIts);
-        System.out.println(j.toString());
+        System.out.println("\n" + j.toString());
         System.out.println(g.toString());
     }
 }

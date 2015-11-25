@@ -10,7 +10,6 @@ import base.Matrix;
  */
 public class qr_fact_givens {
 
-    private Matrix A;
     private double[][] Q;
     private double[][] R;
     private double[][] QR;
@@ -49,7 +48,6 @@ public class qr_fact_givens {
      * @param matrix the given matrix
      */
     public qr_fact_givens(double[][] matrix) {
-        A = new Matrix(matrix);
         int height = matrix.length;
         double[][] diagonalMatrix = createDiagonal(height);
         Stack<double[][]> givensMatrices = new Stack<double[][]>();

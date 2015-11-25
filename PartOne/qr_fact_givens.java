@@ -152,8 +152,8 @@ public class qr_fact_givens {
 
     public String toString() {
         String buf = "";
-        buf += "Q:\n" + new Matrix(Q).toString() + "\n";
-        buf += "R:\n" + new Matrix(R).toString() + "\n";
+        buf += "Q:\n" + new Matrix(Test.formatArray(Q)).toString() + "\n";
+        buf += "R:\n" + new Matrix(Test.formatArray(R)).toString() + "\n";
         buf += "Error:\n" + error + "\n";
         return buf;
     }

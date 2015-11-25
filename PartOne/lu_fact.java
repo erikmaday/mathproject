@@ -115,8 +115,8 @@ public class lu_fact {
 
     public String toString() {
         String buf = "";
-        buf += "L:\n" + L.toString() + "\n";
-        buf += "U:\n" + U.toString() + "\n";
+        buf += "L:\n" + Test.formatArray(L.getArray()).toString() + "\n";
+        buf += "U:\n" + Test.formatArray(U.getArray()).toString() + "\n";
         buf += "Error:\n" + error + "\n";
         return buf;
     }

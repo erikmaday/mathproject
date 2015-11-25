@@ -50,7 +50,7 @@ public class qr_fact_househ {
                     }
                 }
             }
-            rightDiagonal[k] = -norm;
+            rightDiagonal[k] = norm;
         }
 
         //Calculate Error
@@ -122,8 +122,8 @@ public class qr_fact_househ {
 
     public String toString() {
         String buf = "";
-        buf += "Q:\n" + new Matrix(getQ()).toString() + "\n";
-        buf += "R:\n" + new Matrix(getR()).toString() + "\n";
+        buf += "Q:\n" + new Matrix(Test.formatArray(getQ())).toString() + "\n";
+        buf += "R:\n" + new Matrix(Test.formatArray(getR())).toString() + "\n";
         buf += "Error:\n" + error + "\n";
         return buf;
     }

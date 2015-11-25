@@ -18,54 +18,54 @@ public class Test {
                 { 1, 4, 10, 20}
         };
 
-        // Test LU
-        lu_fact luFact = new lu_fact(new Matrix(exampleMatrix));
-        Matrix lMatrix = new Matrix(formatArray(luFact.getL().getArray()));
-        Matrix uMatrix = new Matrix(formatArray(luFact.getU().getArray()));
-        System.out.println("L for LU: \n" + lMatrix.toString());
-        System.out.println("U for LU: \n" + uMatrix.toString());
-        System.out.println("Error for LU: " + luFact.getError() + "\n");
-
-        // Test Givens
-        qr_fact_givens givensRotations = new qr_fact_givens(exampleMatrix);
-        Matrix qMatrix = new Matrix(formatArray(givensRotations.getQ()));
-        Matrix rMatrix = new Matrix(formatArray(givensRotations.getR()));
-        System.out.println("Q for Givens: \n" + qMatrix.toString());
-        System.out.println("R for Givens: \n" + rMatrix.toString() );
-        System.out.println("Error for Givens: " +
-                givensRotations.getError() + "\n");
-
-        // Test Householder
-        qr_fact_househ householderReflections =
-                new qr_fact_househ(new Matrix(exampleMatrix));
-        Matrix qhMatrix = new
-                Matrix(formatArray(householderReflections.getQ()));
-        Matrix rhMatrix = new
-                Matrix(formatArray(householderReflections.getR()));
-        System.out.println("Q for Householder: \n" + qhMatrix.toString());
-        System.out.println("R for Householder: \n" + rhMatrix.toString());
-        System.out.println("Error for Householder: " +
-                householderReflections.getError() + "\n");
-
-        // Test solve_lu_b
-        double[][] m = {
-                {1, -2, 3},
-                {2, 1, 1},
-                {-3, 2, -2}
-        };
-        double[] v = {7, 4, -10};
-        solve_lu_b sol = new solve_lu_b(new Matrix(m), new Vector(v));
-        System.out.println(sol.getX().toString());
-
-        // Test solve_qr_b
-        double[][] z = {
-                {1, -2, 3},
-                {2, 1, 1},
-                {-3, 2, -2}
-        };
-        double[] f = {7, 4, -10};
-        solve_qr_b solu = new solve_qr_b(new Matrix(z), new Vector(f));
-        System.out.println(solu.getX().toString());
+//        // Test LU
+//        lu_fact luFact = new lu_fact(new Matrix(exampleMatrix));
+//        Matrix lMatrix = new Matrix(formatArray(luFact.getL().getArray()));
+//        Matrix uMatrix = new Matrix(formatArray(luFact.getU().getArray()));
+//        System.out.println("L for LU: \n" + lMatrix.toString());
+//        System.out.println("U for LU: \n" + uMatrix.toString());
+//        System.out.println("Error for LU: " + luFact.getError() + "\n");
+//
+//        // Test Givens
+//        qr_fact_givens givensRotations = new qr_fact_givens(exampleMatrix);
+//        Matrix qMatrix = new Matrix(formatArray(givensRotations.getQ()));
+//        Matrix rMatrix = new Matrix(formatArray(givensRotations.getR()));
+//        System.out.println("Q for Givens: \n" + qMatrix.toString());
+//        System.out.println("R for Givens: \n" + rMatrix.toString() );
+//        System.out.println("Error for Givens: " +
+//                givensRotations.getError() + "\n");
+//
+//        // Test Householder
+//        qr_fact_househ householderReflections =
+//                new qr_fact_househ(new Matrix(exampleMatrix));
+//        Matrix qhMatrix = new
+//                Matrix(formatArray(householderReflections.getQ()));
+//        Matrix rhMatrix = new
+//                Matrix(formatArray(householderReflections.getR()));
+//        System.out.println("Q for Householder: \n" + qhMatrix.toString());
+//        System.out.println("R for Householder: \n" + rhMatrix.toString());
+//        System.out.println("Error for Householder: " +
+//                householderReflections.getError() + "\n");
+//
+//        // Test solve_lu_b
+//        double[][] m = {
+//                {1, -2, 3},
+//                {2, 1, 1},
+//                {-3, 2, -2}
+//        };
+//        double[] v = {7, 4, -10};
+//        solve_lu_b sol = new solve_lu_b(new Matrix(m), new Vector(v));
+//        System.out.println(sol.getX().toString());
+//
+//        // Test solve_qr_b
+//        double[][] z = {
+//                {1, -2, 3},
+//                {2, 1, 1},
+//                {-3, 2, -2}
+//        };
+//        double[] f = {7, 4, -10};
+//        solve_qr_b solu = new solve_qr_b(new Matrix(z), new Vector(f));
+//        System.out.println(solu.getX().toString());
     }
 
     public static double[][] formatArray(double[][] array) {

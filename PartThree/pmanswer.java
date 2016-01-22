@@ -4,7 +4,6 @@ import base.Vector;
 
 /**
  * @author Erik Maday, CG Carson, Quinton Johnson
- * @version 1.0
  */
 public class pmanswer {
 

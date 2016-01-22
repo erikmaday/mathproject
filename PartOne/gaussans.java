@@ -3,7 +3,7 @@ package PartOne;
 import base.Vector;
 
 /**
- * Created by erikmaday on 11/23/15.
+ * @author Erik Maday
  */
 public class gaussans {
     private Vector x;

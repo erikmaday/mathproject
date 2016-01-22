@@ -1,8 +1,7 @@
 package base;
 
 /**
- * @author Erik Maday
- * @version 1.0
+ * @author Erik Maday, CG Carson, Quinton Johnson
  */
 public class Vector {
 

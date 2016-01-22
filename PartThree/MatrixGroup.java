@@ -4,7 +4,6 @@ import base.Matrix;
 
 /**
  * @author Erik Maday, CG Carson, Quinton Johnson
- * @version 1.0
  */
 public class MatrixGroup {
     private Matrix matrix;

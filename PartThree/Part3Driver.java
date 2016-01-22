@@ -8,7 +8,7 @@ import base.Vector;
 import java.util.Scanner;
 
 /**
- * Created by erikmaday on 11/24/15.
+ * @author Erik Maday, CG Carson, Quinton Johnson
  */
 public class Part3Driver {
 

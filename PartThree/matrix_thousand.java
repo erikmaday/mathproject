@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 /**
  * @author Erik Maday, CG Carson, Quinton Johnson
- * @version 1.0
  */
 public class matrix_thousand {
 

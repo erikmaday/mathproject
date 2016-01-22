@@ -9,8 +9,7 @@ import base.Matrix;
  * vector . vector,
  * and vector + vector
  *
- * @author Erik Maday
- * @version 1.0
+ * @author Erik Maday, CG Carson, Quinton Johnson
  */
 
 public class LinearAlgebra {
